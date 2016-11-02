@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="manage.article">
+    <select id="manage.article.selectPageList" parameterType="com.enterprise.service.manage.article.bean.Article" resultType="com.enterprise.service.manage.article.bean.Article">
+        select a.*,ac.catename from t_article a join t_articlecategory ac on a.categoryId=ac.id where 1=1
+        <if test="categoryId!=null and categoryId!=''">
+            and a.categoryId=#{categoryId}
+        </if>
+        <if test="title!=null and title!=''">
+            and a.title like "%"#{title}"%"
+        </if>
+        order by id DESC
+        limit #{offset},#{pageSize}
+    </select>
+    <select id="manage.article.selectPageCount" parameterType="com.enterprise.service.manage.article.bean.Article" resultType="java.lang.Integer">
+        select count(*) from t_article where 1=1
+        <if test="categoryId!=null and categoryId!=''">
+            and categoryId=#{categoryId}
+        </if>
+        <if test="title!=null and title!=''">
+            and title like "%"#{title}"%"
+        </if>
+    </select>
+    <insert id="manage.article.insert" parameterType="com.enterprise.service.manage.article.bean.Article" useGeneratedKeys="true" keyProperty="id">
+        insert into t_article(
+        id
+        <if test="title!=null and title!=''">
+            ,title
+        </if>
+        <if test="categoryId!=null and categoryId!=''">
+            ,categoryId
+        </if>
+        <if test="content!=null and content!=''">
+            ,content
+        </if>
+        <if test="keywords!=null and keywords!=''">
+            ,keywords
+        </if>
+        ,createtime
+        <if test="hit!=null and hit!=''">
+            ,hit
+        </if>
+        <if test="image!=null and image!=''">
+            ,image
+        </if>
+        <if test="description!=null and description!=''">
+            ,description
+        </if>
+        <if test="status!=null and status!=''">
+            ,status
+        </if>
+        ) values (
+        #{id}
+        <if test="title!=null and title!=''">
+            ,#{title}
+        </if>
+        <if test="categoryId!=null and categoryId!=''">
+            ,#{categoryId}
+        </if>
+        <if test="content!=null and content!=''">
+            ,#{content}
+        </if>
+        <if test="keywords!=null and keywords!=''">
+            ,#{keywords}
+        </if>
+        ,now()
+        <if test="hit!=null and hit!=''">
+            ,#{hit}
+        </if>
+            ,#{orders}
+        <if test="image!=null and image!=''">
+            ,#{image}
+        </if>
+        <if test="description!=null and description!=''">
+            ,#{description}
+        </if>
+        <if test="status!=null and status!=''">
+            ,#{status}
+        </if>
+        )
+    </insert>
+    <update id="manage.article.update" parameterType="com.enterprise.service.manage.article.bean.Article">
+        update t_article set
+        id = #{id}
+        <if test="title!=null and title!=''">
+            ,title=#{title}
+        </if>
+        <if test="categoryId!=null and categoryId!=''">
+            ,categoryId=#{categoryId}
+        </if>
+        <if test="content!=null and content!=''">
+            ,content=#{content}
+        </if>
+        <if test="keywords!=null and keywords!=''">
+            ,keywords=#{keywords}
+        </if>
+        <if test="hit!=null and hit!=''">
+            ,hit=#{hit}
+        </if>
+        <if test="image!=null and image!=''">
+            ,image=#{image}
+        </if>
+        <if test="description!=null and description!=''">
+            ,description=#{description}
+        </if>
+        <if test="status!=null and status!=''">
+            ,status=#{status}
+        </if>
+
+        where id = #{id}
+    </update>
+    <select id="manage.article.selectOne" parameterType="com.enterprise.service.manage.article.bean.Article" resultType="com.enterprise.service.manage.article.bean.Article">
+        select * from t_article where 1=1
+        <if test="id!=0">
+            and id=#{id}
+        </if>
+        <if test="title!=null and title!=''">
+            and title=#{title}
+        </if>
+    </select>
+
+
+    <select id="manage.article.selectList" parameterType="com.enterprise.service.manage.article.bean.Article" resultType="com.enterprise.service.manage.article.bean.Article">
+        select * from t_article where 1=1
+        order by id DESC
+    </select>
+    <select id="manage.article.selectById" parameterType="int" resultType="com.enterprise.service.manage.article.bean.Article">
+        select * from t_article where 1=1 and id=#{id}
+    </select>
+    <delete id="manage.article.delete" parameterType="com.enterprise.service.manage.article.bean.Article">
+        delete from t_article where id=#{id}
+    </delete>
+    <delete id="manage.article.deleteById" parameterType="int">
+        delete from t_article where id=#{id}
+    </delete>
+</mapper>

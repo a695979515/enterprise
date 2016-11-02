@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="manage.about">
+	<select id="manage.about.selectPageList"
+		parameterType="com.enterprise.service.manage.about.bean.About"
+		resultType="com.enterprise.service.manage.about.bean.About">
+		select * from t_about  where 1=1
+		order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+	<select id="manage.about.selectPageCount"
+		parameterType="com.enterprise.service.manage.about.bean.About"
+		resultType="java.lang.Integer">
+		select count(*) from  t_about t where 1=1 
+		
+	</select>
+	<insert id="manage.about.insert"
+		parameterType="com.enterprise.service.manage.about.bean.About"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_about(
+			id
+		<if test="contentHtml!=null and contentHtml!=''">
+			,contentHtml
+		</if>
+
+
+		) values (
+		#{id}
+		<if test="contentHtml!=null and contentHtml!=''">
+			,#{contentHtml}
+		</if>
+		)
+	</insert>
+	<update id="manage.about.update"
+		parameterType="com.enterprise.service.manage.about.bean.About">
+		update t_about
+		set id=#{id}
+		<if test="contentHtml!=null and contentHtml!=''">
+			,contentHtml=#{contentHtml}
+		</if>
+			where 1=1 and id=#{id}
+	</update>
+	<select id="manage.about.selectOne"
+		parameterType="com.enterprise.service.manage.about.bean.About"
+		resultType="com.enterprise.service.manage.about.bean.About">
+		select * from t_about where 1=1 limit 0,1
+	</select>
+	<select id="manage.about.selectList" parameterType="com.enterprise.service.manage.about.bean.About" resultType="com.enterprise.service.manage.about.bean.About">
+		select * from t_about where 1=1
+	</select>
+	<select id="manage.about.selectById" parameterType="int" resultType="com.enterprise.service.manage.about.bean.About">
+	 select * from t_about  where 1=1 and id=#{id}
+	</select>
+</mapper>

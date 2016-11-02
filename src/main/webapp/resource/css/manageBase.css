@@ -1,0 +1,51 @@
+.tableBasic {
+    background-color: #F9F9F9;
+    color: #666666;
+    border-left: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
+}
+
+.tableBasic td, .tableBasic th {
+    border-right: 1px dotted #CCCCCC;
+    border-bottom: 1px dotted #CCCCCC;
+    padding: 5px;
+}
+.tableOnebor td, .tableOnebor th {
+    border-right: 1px dotted #CCCCCC;
+    border-bottom: 1px dotted #CCCCCC;
+    padding: 5px;
+}
+
+.textArea {
+    border: 1px solid #DBDBDB;
+    background-color: #FFF;
+    padding: 4px 5px;
+    color: #999;
+    font-size: 12x;
+    line-height: 20px;
+    -webkit-appearance: none;
+    resize: none;
+}
+.pr {
+    padding-right: 10px;
+}
+
+.pl {
+    padding-left: 10px;
+}
+
+#index .indexBox {
+    margin-bottom: 20px;
+}
+
+#index .indexBox .boxTitle {
+    border-bottom: 1px solid #D7D7D7;
+    color: #666666;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.filter {
+    margin: 0 0 10px -2px;
+    height: 35px;
+}

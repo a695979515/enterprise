@@ -1,0 +1,228 @@
+*{margin:0; padding:0; list-style:none; }
+body{
+    background: #ffffff;
+    font-family: Microsoft Yahei;
+}
+a{
+    text-decoration: none;
+    color: #333333;
+}
+.banner {
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+.warp_main{
+    width:1100px;
+    min-height: 450px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.warp_left{
+    width:220px;
+    margin-right: 20px;
+    float: left;
+}
+.warp_right{
+    width:860px;
+    float: right;
+}
+.warp_left_box{
+    width: 220px;
+    text-align: right;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.warp_left_box .active{
+    background-color: #AFAFAF;
+}
+.warp_left_box .active a{
+    color: #ffffff;
+}
+.warp_left_box h3{
+    background: #8f8f8f;
+    height: 88px;
+    line-height: 88px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: normal;
+    text-align: left;
+    padding-top: 22px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.warp_left_box ul {
+    padding-top: 8px;
+    padding-right: 0;
+    padding-bottom: 10px;
+    padding-left: 0;
+}
+.warp_left_box ul li {
+    height: 46px;
+    line-height: 46px;
+    background: #E7E7E7;
+    background-repeat: no-repeat;
+    background-position: left top;
+    font-size: 16px;
+    text-align: left;
+    text-indent: 32px;
+    color: #000;
+    margin-bottom: 2px;
+    width: 220px;
+}
+.warp_left_box ul li:hover{
+    background-color: #AFAFAF;
+}
+.warp_left_box ul li a:hover{
+    color: #ffffff;
+}
+.warp_left_box ul li a{
+    display: block;
+    text-decoration: none;
+    color: #333333;
+    margin-right: 9px;
+}
+
+
+.breadcrumb {
+    height: 35px;
+    line-height: 35px;
+    background: #ececec;
+    padding-left: 16px;
+}
+.breadcrumb a {
+    font-size: 12px;
+    color: #333333;
+    text-decoration: none;
+}
+.article_item{
+    margin: 20px 20px 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #d9d9d9;
+}
+.article_item a{
+    font-size: 13px;
+    color: #888;
+     padding: 0 5px 0 0;
+    text-decoration: none;
+ }
+.article_item h2 a {
+    color: #333;
+    line-height: 30px;
+    font-weight: 800;
+    font-size: 16px;
+    text-decoration: none;
+}
+.article_item_message {
+    color: #888;
+    line-height: 24px;
+    padding: 6px 0 6px 0;
+    font-size: 13px;
+}
+.article_content{
+    margin:20px;
+}
+.article_content h1{
+    font-size: 24px;
+    color: #333;
+    line-height: 30px;
+    font-weight: normal;
+    text-align: center;
+}
+.article_content .article_message{
+    font-size: 12px;
+    color: #888;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+.recruitmentList{
+    margin-bottom: 20px;
+}
+.recruitmentList p{
+    line-height: 24px;
+    font-size: 14px;
+}
+.foot{
+    margin-top: 40px;
+    font-size: 14px;
+}
+.foot_top{
+    background: #3e3e3e;
+    height: 45px;
+    overflow: hidden;
+}
+.foot_top ul{
+    margin-left: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.foot_top ul li{
+    float: left;
+    color: #888888;
+    margin-right: 10px;
+}
+.foot_top ul li a {
+    color: #888;
+    text-decoration: none;
+}
+.foot_bottom{
+    background: #2e2e2e;
+    height: 45px;
+}
+.foot_bottom p {
+    margin: 0 auto;
+    width: 1000px;
+    color: #777777;
+    line-height: 45px;
+    padding-left: 20px;
+}
+.message_input{
+    padding: 6px 3px;
+    border: 1px solid #cecece;
+    float: left;
+    width: 200px;
+}
+.message_textarea{
+    border: 1px solid #cccccc;
+    width: 540px;
+    height: 120px;
+    padding: 3px 5px;
+    resize: none;
+}
+.message_input:hover,.message_textarea:hover{
+    border-color: #abaaaa;
+}
+.message_sum{
+    padding: 4px 30px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #403F3F;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+}
+.message_sum:hover {
+    color: #403F3F;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none;
+}
+.previous , .next{
+    margin: 10px 0px;
+    font-size: 14px;
+    color: #333333;
+}
+.previous a,.next a{
+    color: #333333;
+}
+
+

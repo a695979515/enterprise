@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="front.message">
+	<select id="front.message.selectPageList"
+		parameterType="com.enterprise.service.front.messages.bean.Messages"
+		resultType="com.enterprise.service.front.messages.bean.Messages">
+		select * from t_messages where 1=1 
+		<if test="gender!='' and gender!=null">
+		 	and gender=#{gender}
+		</if>
+		order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+	<select id="front.message.selectPageCount"
+		parameterType="com.enterprise.service.front.messages.bean.Messages"
+		resultType="java.lang.Integer">
+		select count(*) from  t_messages t where 1=1 
+		<if test="gender!='' and gender!=null">
+		 	and gender=#{gender}
+		</if>
+	</select>
+	<insert id="front.message.insert"
+		parameterType="com.enterprise.service.front.messages.bean.Messages"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_messages(
+			id
+		<if test="title!=null and title!=''">
+			,title
+		</if>
+		<if test="gender!=null and gender!=''">
+			,gender
+		</if>
+		<if test="name!=null and name!=''">
+			,name
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel
+		</if>
+		<if test="email!=null and email!=''">
+			,email
+		</if>
+		<if test="content!=null and content!=''">
+			,content
+		</if>
+			,leavetime
+		
+		
+		) values (
+		#{id}
+		<if test="title!=null and title!=''">
+			,#{title}
+		</if>
+		<if test="gender!=null and gender!=''">
+			,#{gender}
+		</if>
+		<if test="name!=null and name!=''">
+			,#{name}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,#{tel}
+		</if>
+		<if test="email!=null and email!=''">
+			,#{email}
+		</if>
+		<if test="content!=null and content!=''">
+			,#{content}
+		</if>
+			,now()
+		)
+	</insert>
+	<update id="front.message.update"
+		parameterType="com.enterprise.service.front.messages.bean.Messages">
+		update t_messages
+		set id=#{id}
+		<if test="title!=null and title!=''">
+			,title=#{title}
+		</if>
+		<if test="gender!=null and gender!=''">
+			,gender=#{gender}
+		</if>
+		<if test="name!=null and name!=''">
+			,name=#{name}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel=#{tel}
+		</if>
+		<if test="email!=null and email!=''">
+			,email=#{email}
+		</if>
+		<if test="content!=null and content!=''">
+			,content=#{content}
+		</if>
+			where 1=1 and id=#{id}
+	</update>
+	<select id="front.message.selectOne"
+		parameterType="com.enterprise.service.front.messages.bean.Messages"
+		resultType="com.enterprise.service.front.messages.bean.Messages">
+		select * from t_messages where 1=1 limit 0,1
+	</select>
+	<select id="front.message.selectById" parameterType="string" resultType="com.enterprise.service.manage.messages.bean.Messages">
+	 select * from t_messages t where 1=1 and id=#{id}
+	</select>
+</mapper>

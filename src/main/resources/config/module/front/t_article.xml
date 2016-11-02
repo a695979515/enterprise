@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="front.article">
+    <select id="front.article.selectPageList" parameterType="com.enterprise.service.front.article.bean.Article" resultType="com.enterprise.service.front.article.bean.Article">
+        select a.id,a.categoryId,a.title,substring(a.description,1,100) as description,a.image,a.keywords,a.createtime,a.hit,a.orders,a.status,ac.catename
+        from t_article a join t_articlecategory ac on a.categoryId=ac.id where 1=1
+        <if test="categoryId!=null and categoryId!=''">
+            and a.categoryId=#{categoryId}
+        </if>
+
+        order by id DESC
+        limit #{offset},#{pageSize}
+    </select>
+    <select id="front.article.selectPageCount" parameterType="com.enterprise.service.front.article.bean.Article" resultType="java.lang.Integer">
+        select count(*) from t_article where 1=1
+        <if test="categoryId!=null and categoryId!=''">
+            and categoryId=#{categoryId}
+        </if>
+
+    </select>
+
+    <select id="front.article.selectOne" parameterType="com.enterprise.service.front.article.bean.Article" resultType="com.enterprise.service.front.article.bean.Article">
+        select a.*,ac.catename
+        from t_article a join t_articlecategory ac on a.categoryId=ac.id where 1=1
+        <if test="id!=0">
+            and a.id=#{id}
+        </if>
+        <if test="title!=null and title!=''">
+            and a.title=#{title}
+        </if>
+    </select>
+    <select id="front.article.selectPrevious" parameterType="int" resultType="com.enterprise.service.front.article.bean.Article">
+
+        select * from t_article where id = (select id from t_article where id &gt; #{id} order by id asc limit 1)
+    </select>
+    <select id="front.article.selectNext" parameterType="int" resultType="com.enterprise.service.front.article.bean.Article">
+        select * from t_article where id = (select id from t_article where id &lt; #{id} order by id desc limit 1)
+    </select>
+    <select id="front.article.selectList" parameterType="com.enterprise.service.front.article.bean.Article" resultType="com.enterprise.service.front.article.bean.Article">
+        select * from t_article where 1=1
+
+        order by id
+    </select>
+    <select id="front.article.selectById" parameterType="int" resultType="com.enterprise.service.front.article.bean.Article">
+        select * from t_article where 1=1 and id=#{id}
+    </select>
+    <update id="front.article.update" parameterType="com.enterprise.service.front.article.bean.Article">
+        update t_article set
+        id = #{id}
+        ,hit=hit+1
+        where id = #{id}
+    </update>
+</mapper>
