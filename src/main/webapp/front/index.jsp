@@ -10,6 +10,7 @@
     ul li {
         /* box-sizing: border-box; */
         float: left;
+
     }
     .banners_li a {
         display: block;
