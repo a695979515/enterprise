@@ -44,6 +44,7 @@
         border-right: none;
     }
 </style>
+
 <body>
 <%@include file="/front/common/navigation.jsp" %>
 <%@include file="/front/common/indexSlide.jsp" %>
