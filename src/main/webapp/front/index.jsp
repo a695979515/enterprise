@@ -3,12 +3,15 @@
 
 <%@include file="/front/common/common.jsp" %>
 <style>
+    .banners{
+        padding: 130px 0px;width: 1240px;margin:0 auto;
+    }
     .banners_li {
         width: 33.33%;
         text-align: left;
     }
-    ul li {
-        /* box-sizing: border-box; */
+    .banners ul li {
+        box-sizing: border-box;
         float: left;
 
     }
@@ -48,29 +51,29 @@
 <body>
 <%@include file="/front/common/navigation.jsp" %>
 <%@include file="/front/common/indexSlide.jsp" %>
-<div style="padding: 130px 0px;width: 1240px;margin:0 auto;">
+<div class="banners" >
     <ul>
         <li class="banners_li">
-            <a>
+            <a href="<%=path%>/service">
                 <div>
-                    <h3>测试文字</h3>
-                    <p>测试文字测试文字测试文字</p>
+                    <h3>服务领域</h3>
+                    <p>别墅装修，校区装修</p>
                 </div>
             </a>
         </li>
         <li class="banners_li">
-            <a>
+            <a href="<%=path%>/article">
                 <div>
-                    <h3>测试文字</h3>
-                    <p>测试文字测试文字测试文字</p>
+                    <h3>新闻动态</h3>
+                    <p>公司动态，行业新闻</p>
                 </div>
             </a>
         </li>
         <li class="banners_li banners_li_last">
-            <a>
+            <a href="<%=path%>/about">
                 <div>
-                    <h3>测试文字</h3>
-                    <p>测试文字测试文字测试文字</p>
+                    <h3>关于我们</h3>
+                    <p>了解我们，了解华宇</p>
                 </div>
             </a>
         </li>
