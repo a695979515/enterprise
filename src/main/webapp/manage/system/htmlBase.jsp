@@ -3,16 +3,16 @@
 <%@page import="org.apache.commons.lang.StringUtils" %>
 <%@page import="org.springframework.web.context.WebApplicationContext" %>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@page import="com.enterprise.service.manage.system.impl.UserService" %>
-<%@page import="com.enterprise.service.manage.system.impl.MenuService" %>
+<%@page import="com.enterprise.service.impl.UserServiceImpl" %>
+<%@page import="com.enterprise.service.impl.MenuService" %>
 <%@page import="java.util.Map" %>
 <%@page import="java.util.HashMap" %>
 <%@page import="java.util.LinkedHashMap" %>
 <%@page import="java.util.List" %>
-<%@page import="com.enterprise.common.Menu" %>
-<%@page import="com.enterprise.common.User" %>
+<%@page import="com.enterprise.entity.Menu" %>
+<%@page import="com.enterprise.entity.User" %>
 <%@page import="com.enterprise.core.SystemManage" %>
-<%@page import="com.enterprise.common.MenuItem" %>
+<%@page import="com.enterprise.entity.MenuItem" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -43,9 +43,9 @@
             e.setUsername(username);
             e.setPassword(password);
             WebApplicationContext app = WebApplicationContextUtils.getWebApplicationContext(request.getSession().getServletContext());
-            UserService userService = app.getBean(UserService.class);
+            UserServiceImpl userServiceImpl = app.getBean(UserServiceImpl.class);
             MenuService menuService = app.getBean(MenuService.class);
-            u = userService.login(e);
+            u = userServiceImpl.login(e);
             session.setAttribute("manage_session_user_info", u);
             Map<String, String> param = new HashMap<String, String>();
             List<Menu> menus = menuService.selectList(param);

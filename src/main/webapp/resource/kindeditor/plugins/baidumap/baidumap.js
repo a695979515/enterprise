@@ -19,8 +19,8 @@ KindEditor.plugin('baidumap', function(K) {
 			// left start
 			'<div class="ke-left">',
 			lang.address + ' <input id="kindeditor_plugin_map_address" name="address" class="ke-input-text" value="" style="width:200px;" /> ',
-			'<span class="ke-button-common ke-button-outer">',
-			'<input type="button" name="searchBtn" class="ke-button-common ke-button" value="' + lang.search + '" />',
+			'<span class="ke-button-entity ke-button-outer">',
+			'<input type="button" name="searchBtn" class="ke-button-entity ke-button" value="' + lang.search + '" />',
 			'</span>',
 			'</div>',
 			// right start

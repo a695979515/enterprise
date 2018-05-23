@@ -2,7 +2,7 @@ package com.enterprise.util;
 
 import javax.servlet.http.HttpSession;
 
-import com.enterprise.common.User;
+import com.enterprise.entity.User;
 
 /**
  * 验证session中用户是否还存在

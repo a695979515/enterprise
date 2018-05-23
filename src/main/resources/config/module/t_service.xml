@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="service">
+    <select id="service.selectPageList" parameterType="com.enterprise.entity.Service" resultType="com.enterprise.entity.Service">
+        select * from t_service  where 1=1
+        <if test="title!=null and title!=''">
+            and title like "%"#{title}"%"
+        </if>
+        order by id DESC
+        limit #{offset},#{pageSize}
+    </select>
+    <select id="service.selectPageCount" parameterType="com.enterprise.entity.Service" resultType="java.lang.Integer">
+        select count(*) from t_service where 1=1
+        <if test="title!=null and title!=''">
+            and title like "%"#{title}"%"
+        </if>
+    </select>
+    <insert id="service.insert" parameterType="com.enterprise.entity.Service" useGeneratedKeys="true" keyProperty="id">
+        insert into t_service(
+        id
+        <if test="title!=null and title!=''">
+            ,title
+        </if>
+
+        <if test="contentHtml!=null and contentHtml!=''">
+            ,contentHtml
+        </if>
+        <if test="status!=null and status!=''">
+            ,status
+        </if>
+        <if test="orders!=null and orders!=''">
+            ,orders
+        </if>
+        ) values (
+        #{id}
+        <if test="title!=null and title!=''">
+            ,#{title}
+        </if>
+
+        <if test="contentHtml!=null and contentHtml!=''">
+            ,#{contentHtml}
+        </if>
+        <if test="status!=null and status!=''">
+            ,#{status}
+        </if>
+        <if test="orders &gt; 0">
+            ,#{orders}
+        </if>
+
+        )
+    </insert>
+    <update id="service.update" parameterType="com.enterprise.entity.Service">
+        update t_service set
+        id = #{id}
+        <if test="title!=null and title!=''">
+            ,title=#{title}
+        </if>
+        <if test="contentHtml!=null and contentHtml!=''">
+            ,contentHtml=#{contentHtml}
+        </if>
+        <if test="status!=null and status!=''">
+            ,status=#{status}
+        </if>
+        <if test="orders &gt; 0">
+            ,orders=#{orders}
+        </if>
+
+
+        where id = #{id}
+    </update>
+    <select id="service.selectOne" parameterType="com.enterprise.entity.Service" resultType="com.enterprise.entity.Service">
+        select * from t_service where 1=1
+        <if test="id!=0">
+            and id=#{id}
+        </if>
+        <if test="title!=null and title!=''">
+            and title=#{title}
+        </if>
+        <if test="status!=null and status!=''">
+            and status=#{status}
+        </if>
+    </select>
+
+
+    <select id="service.selectList" parameterType="com.enterprise.entity.Service" resultType="com.enterprise.entity.Service">
+        select * from t_service where 1=1 and status ='y'
+        order by orders DESC
+    </select>
+    <select id="service.selectById" parameterType="int" resultType="com.enterprise.entity.Service">
+        select * from t_service where 1=1 and id=#{id}
+    </select>
+    <delete id="service.delete" parameterType="com.enterprise.entity.Service">
+        delete from t_service where id=#{id}
+    </delete>
+    <delete id="service.deleteById" parameterType="int">
+        delete from t_service where id=#{id}
+    </delete>
+</mapper>

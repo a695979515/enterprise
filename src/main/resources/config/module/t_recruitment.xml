@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="recruitment">
+    <select id="recruitment.selectPageList"
+            parameterType="com.enterprise.entity.Recruitment"
+            resultType="com.enterprise.entity.Recruitment">
+        select * from t_recruitment where 1=1
+        <if test="status!=null and status!=''">
+            and status = #{status}
+        </if>
+        <if test="position!=null and position!=''">
+            and position like "%"#{position}"%"
+        </if>
+        order by id desc
+        limit #{offset},#{pageSize}
+    </select>
+    <select id="recruitment.selectPageCount"
+            parameterType="com.enterprise.entity.Recruitment" resultType="java.lang.Integer">
+        select count(*) from t_recruitment where 1=1
+        <if test="status!=null and status!=''">
+            and status = #{status}
+        </if>
+        <if test="position!=null and position!=''">
+            and position like "%"#{position}"%"
+        </if>
+    </select>
+    <insert id="recruitment.insert" parameterType="com.enterprise.entity.Recruitment"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into t_recruitment(
+        id
+        <if test="position!=null and position!=''">
+            ,position
+        </if>
+        <if test="nature!=null and nature!=''">
+            ,nature
+        </if>
+        <if test="number!=0">
+            ,number
+        </if>
+        <if test="education!=null and education!=''">
+            ,education
+        </if>
+        <if test="experience!=null and experience!=''">
+            ,experience
+        </if>
+        <if test="requirements!=null and requirements!=''">
+            ,requirements
+        </if>
+        ,createtime
+        <if test="createAccount!=null and createAccount!=''">
+            ,createAccount
+        </if>
+        <if test="status!=null and status!=''">
+            ,status
+        </if>
+        ) values (
+        #{id}
+        <if test="position!=null and position!=''">
+            ,#{position}
+        </if>
+        <if test="nature!=null and nature!=''">
+            ,#{nature}
+        </if>
+        <if test="number!=0">
+            ,#{number}
+        </if>
+        <if test="education!=null and education!=''">
+            ,#{education}
+        </if>
+        <if test="experience!=null and experience!=''">
+            ,#{experience}
+        </if>
+        <if test="requirements!=null and requirements!=''">
+            ,#{requirements}
+        </if>
+        ,now()
+        <if test="createAccount!=null and createAccount!=''">
+            ,#{createAccount}
+        </if>
+        <if test="status!=null and status!=''">
+            ,#{status}
+        </if>
+        )
+    </insert>
+    <update id="recruitment.update" parameterType="com.enterprise.entity.Recruitment">
+        update t_recruitment
+        set id=#{id}
+        <if test="position!=null and position!=''">
+            ,position=#{position}
+        </if>
+        <if test="nature!=null and nature!=''">
+            ,nature=#{nature}
+        </if>
+        <if test="number!=0">
+            ,number=#{number}
+        </if>
+        <if test="education!=null and education!=''">
+            ,education=#{education}
+        </if>
+        <if test="experience!=null and experience!=''">
+            ,experience=#{experience}
+        </if>
+        <if test="requirements!=null and requirements!=''">
+            ,requirements=#{requirements}
+        </if>
+        <if test="status!=null and status!=''">
+            ,status=#{status}
+        </if>
+        where 1=1 and id=#{id}
+    </update>
+    <select id="recruitment.selectOne" parameterType="com.enterprise.entity.Recruitment"
+            resultType="com.enterprise.entity.Recruitment">
+		select * from t_recruitment where 1=1 and id = #{id}
+	</select>
+    <select id="recruitment.selectList"
+            parameterType="com.enterprise.entity.Recruitment"
+            resultType="com.enterprise.entity.Recruitment">
+        select * from t_recruitment where 1=1
+        <if test="status!=null and status!=''">
+            and status=#{status}
+        </if>
+    </select>
+    <select id="recruitment.selectById" parameterType="int"
+            resultType="com.enterprise.entity.Recruitment">
+		select * from t_recruitment where 1=1 and id = #{id}
+	</select>
+    <delete id="recruitment.deleteById" parameterType="int">
+		delete from t_recruitment where id = #{id}
+	</delete>
+    <delete id="recruitment.delete" parameterType="com.enterprise.entity.Recruitment">
+		delete from t_recruitment where id=#{id}
+	</delete>
+</mapper>

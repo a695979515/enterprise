@@ -4,7 +4,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<bean id="baseDao" class="com.enterprise.core.dao.BaseDao">
+	<bean id="baseDao" class="com.enterprise.dao.BaseDao">
 		<property name="sqlSessionFactory" ref="sessionFactory"/>
 	</bean>
 </beans>

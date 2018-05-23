@@ -1156,7 +1156,7 @@ Class.Mutators = {
 
 name: Class.Extras
 
-description: Contains Utility Classes that can be implemented into your own Classes to ease the execution of many common tasks.
+description: Contains Utility Classes that can be implemented into your own Classes to ease the execution of many entity tasks.
 
 license: MIT-style license.
 

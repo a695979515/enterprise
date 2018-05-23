@@ -19,7 +19,7 @@
 			</bean>
 			<bean id="jsonHttpMesaageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
 		</mvc:message-converters>
-	</mvc:annotation-driven> 
+	</mvc:annotation-driven>
 	<mvc:resources mapping="/resource/**" location="/resource/" cache-period="86400"/>
 	<mvc:resources mapping="/attached/**" location="/attached/" cache-period="86400"/>
 	<mvc:default-servlet-handler/>

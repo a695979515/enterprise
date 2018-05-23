@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="systemlog">
+	<select id="systemlog.selectPageList"
+		parameterType="com.enterprise.entity.Systemlog"
+		resultType="com.enterprise.entity.Systemlog">
+		select * from t_systemlog where 1=1 
+		<if test="type!=0">
+		 	and type=#{type}
+		</if>
+		<if test="diffAreaLogin!=null and diffAreaLogin!=''">
+		 	and diffAreaLogin=#{diffAreaLogin}
+		</if>
+		 <if test="account!=null and account!=''">
+		 	and account like "%"#{account}"%"
+		</if>
+		order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+	<select id="systemlog.selectPageCount"
+		parameterType="com.enterprise.entity.Systemlog"
+		resultType="java.lang.Integer">
+		select count(*) from  t_systemlog t where 1=1 
+		<if test="type!=0">
+		 	and type=#{type}
+		</if>
+		<if test="diffAreaLogin!=null and diffAreaLogin!=''">
+		 	and diffAreaLogin=#{diffAreaLogin}
+		</if>
+		 <if test="account!=null and account!=''">
+		 	and account like "%"#{account}"%"
+		</if>
+	</select>
+	<insert id="systemlog.insert"
+		parameterType="com.enterprise.entity.Systemlog"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_systemlog(
+		id,type
+		<if test="title!=null and title!=''">
+			,title
+		</if>
+		<if test="content!=null and content!=''">
+			,content
+		</if>
+		<if test="account!=null and account!=''">
+			,account
+		</if>
+		<if test="loginIp!=null and loginIp!=''">
+			,loginIp
+		</if>
+			,logintime
+		<if test="loginArea!=null and loginArea!=''">
+			,loginArea
+		</if>
+		<if test="diffAreaLogin!=null and diffAreaLogin!=''">
+			,diffAreaLogin
+		</if>
+		
+		) values (
+		#{id},#{type}
+		<if test="title!=null and title!=''">
+			,#{title}
+		</if>
+		<if test="content!=null and content!=''">
+			,#{content}
+		</if>
+		<if test="account!=null and account!=''">
+			,#{account}
+		</if>
+		<if test="loginIp!=null and loginIp!=''">
+			,#{loginIp}
+		</if>
+			,now()
+		<if test="loginArea!=null and loginArea!=''">
+			,#{loginArea}
+		</if>
+		<if test="diffAreaLogin!=null and diffAreaLogin!=''">
+			,#{diffAreaLogin}
+		</if>
+		)
+	</insert>
+	<update id="systemlog.update"
+		parameterType="com.enterprise.entity.Systemlog">
+		update t_systemlog
+		set id=#{id},type=#{type}
+		<if test="title!=null and title!=''">
+			,title=#{title}
+		</if>
+		<if test="content!=null and content!=''">
+			,content=#{content}
+		</if>
+		<if test="account!=null and account!=''">
+			,account=#{account}
+		</if>
+			where 1=1 and id=#{id}
+	</update>
+	<select id="systemlog.selectOne"
+		parameterType="com.enterprise.entity.Systemlog"
+		resultType="com.enterprise.entity.Systemlog">
+		select * from t_systemlog where 1=1 limit 0,1
+	</select>
+	<select id="systemlog.selectById" parameterType="string" resultType="com.enterprise.entity.Systemlog">
+	 select * from t_systemlog t where 1=1 and id=#{id}
+	</select>
+	<select id="systemlog.selectFirstOne" parameterType="string" resultType="com.enterprise.entity.Systemlog">
+	 select * from t_systemlog t where 1=1 and account=#{account} order by id desc limit 0,1
+	</select>
+</mapper>

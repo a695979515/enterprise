@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="indeximg">
+	<select id="indeximg.selectPageList" parameterType="com.enterprise.entity.IndexImg" resultType="com.enterprise.entity.IndexImg">
+	select * from t_indeximg where 1=1
+	<if test="status!=null and status!=''">
+		and status = #{status}
+	</if>
+	order by id
+	limit #{offset},#{pageSize}
+	</select>
+	<select id="indeximg.selectPageCount" parameterType="com.enterprise.entity.IndexImg" resultType="java.lang.Integer">
+		select count(*) from t_indeximg where 1=1
+		<if test="status!=null and status!=''">
+			and status = #{status}
+		</if>
+	</select>
+	<insert id="indeximg.insert" parameterType="com.enterprise.entity.IndexImg" useGeneratedKeys="true" keyProperty="id">
+		insert into t_indeximg(
+			id
+		<if test="title!=null and title!=''">
+			,title
+		</if>	
+		<if test="pictureUrl!=null and pictureUrl!=''">
+			,pictureUrl
+		</if>	
+		<if test="link!=null and link!=''">
+			,link
+		</if>	
+			,orders
+		<if test="status!=null and status!=''">
+			,status
+		</if>	
+
+		) values (
+			#{id}
+		<if test="title!=null and title!=''">
+			,#{title}
+		</if>
+		<if test="pictureUrl!=null and pictureUrl!=''">
+			,#{pictureUrl}
+		</if>
+		<if test="link!=null and link!=''">
+			,#{link}
+		</if>
+			,#{orders}
+		<if test="status!=null and status!=''">
+			,#{status}
+		</if>
+		)
+	</insert>
+	<update id="indeximg.update" parameterType="com.enterprise.entity.IndexImg">
+		update t_indeximg
+		set id=#{id}
+		<if test="title!=null and title!=''">
+			,title=#{title}
+		</if>
+		<if test="pictureUrl!=null and pictureUrl!=''">
+			,pictureUrl=#{pictureUrl}
+		</if>
+		<if test="link!=null and link!=''">
+			,link=#{link}
+		</if>
+			,orders=#{orders}
+		<if test="status!=null and status!=''">
+			,status=#{status}
+		</if>
+		where 1=1 and id=#{id}
+	</update>
+	<select id="indeximg.selectOne" parameterType="com.enterprise.entity.IndexImg" resultType="com.enterprise.entity.IndexImg">
+		select * from t_indeximg where 1=1 and id = #{id}
+	</select>
+	<select id="indeximg.selectList" parameterType="com.enterprise.entity.IndexImg" resultType="com.enterprise.entity.IndexImg">
+		select * from t_indeximg where 1=1
+		<if test="status!=null and status!=''">
+			and status=#{status}
+		</if>
+		order by orders
+	</select>
+	<select id="indeximg.selectById" parameterType="int" resultType="com.enterprise.entity.IndexImg">
+		select * from t_indeximg where id = #{id}
+	</select>
+	<delete id="indeximg.deleteById" parameterType="int">
+		delete from t_indeximg where id = #{id}
+	</delete>
+	<delete id="indeximg.delete" parameterType="com.enterprise.entity.IndexImg">
+		delete from t_indeximg where id = #{id}
+	</delete>
+</mapper>

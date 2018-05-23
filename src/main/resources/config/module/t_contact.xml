@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="contact">
+	<select id="contact.selectPageList"
+		parameterType="com.enterprise.entity.Contact"
+		resultType="com.enterprise.entity.Contact">
+		select * from t_contact  where 1=1
+		order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+	<select id="contact.selectPageCount"
+		parameterType="com.enterprise.entity.Contact"
+		resultType="java.lang.Integer">
+		select count(*) from  t_contact t where 1=1 
+		
+	</select>
+	<insert id="contact.insert"
+		parameterType="com.enterprise.entity.Contact"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_contact(
+			id
+		<if test="contentHtml!=null and contentHtml!=''">
+			,contentHtml
+		</if>
+
+
+		) values (
+		#{id}
+		<if test="contentHtml!=null and contentHtml!=''">
+			,#{contentHtml}
+		</if>
+		)
+	</insert>
+	<update id="contact.update"
+		parameterType="com.enterprise.entity.Contact">
+		update t_contact
+		set id=#{id}
+		<if test="contentHtml!=null and contentHtml!=''">
+			,contentHtml=#{contentHtml}
+		</if>
+			where 1=1 and id=#{id}
+	</update>
+	<select id="contact.selectOne"
+		parameterType="com.enterprise.entity.Contact"
+		resultType="com.enterprise.entity.Contact">
+		select * from t_contact where 1=1 limit 0,1
+	</select>
+	<select id="contact.selectList" parameterType="com.enterprise.entity.Contact" resultType="com.enterprise.entity.Contact">
+		select * from t_contact where 1=1
+	</select>
+	<select id="contact.selectById" parameterType="int" resultType="com.enterprise.entity.Contact">
+	 select * from t_contact  where 1=1 and id=#{id}
+	</select>
+</mapper>

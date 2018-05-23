@@ -10272,7 +10272,7 @@ $.extend( $.effects, {
 				// http://bugs.jquery.com/ticket/9917
 				// jQuery 1.6.2 incorrectly returns undefined for any falsy value.
 				// We can't differentiate between "" and 0 here, so we just assume
-				// empty string since it's likely to be a more common value...
+				// empty string since it's likely to be a more entity value...
 				if ( val === undefined ) {
 					val = "";
 				}
@@ -16554,7 +16554,7 @@ var tooltip = $.widget( "ui.tooltip", {
 
 		// close open tooltips
 		$.each( this.tooltips, function( id, tooltipData ) {
-			// Delegate to close method to handle common cleanup
+			// Delegate to close method to handle entity cleanup
 			var event = $.Event( "blur" ),
 				element = tooltipData.element;
 			event.target = event.currentTarget = element[ 0 ];

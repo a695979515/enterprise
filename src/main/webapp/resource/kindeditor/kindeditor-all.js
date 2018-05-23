@@ -156,7 +156,8 @@ function _extend(child, parent, proto) {
 	child.prototype = childProto;
 	child.parent = parent ? parent.prototype : null;
 }
-
+
+
 function _json(text) {
 	var match;
 	if ((match = /\{[\s\S]*\}|\[[\s\S]*\]/.exec(text))) {
@@ -316,9 +317,12 @@ K.options = {
 
 
 var _useCapture = false;
-
-var _INPUT_KEY_MAP = _toMap('8,9,13,32,46,48..57,59,61,65..90,106,109..111,188,190..192,219..222');
-var _CURSORMOVE_KEY_MAP = _toMap('33..40');
+
+
+var _INPUT_KEY_MAP = _toMap('8,9,13,32,46,48..57,59,61,65..90,106,109..111,188,190..192,219..222');
+
+var _CURSORMOVE_KEY_MAP = _toMap('33..40');
+
 var _CHANGE_KEY_MAP = {};
 _each(_INPUT_KEY_MAP, function(key, val) {
 	_CHANGE_KEY_MAP[key] = val;
@@ -326,14 +330,16 @@ _each(_INPUT_KEY_MAP, function(key, val) {
 _each(_CURSORMOVE_KEY_MAP, function(key, val) {
 	_CHANGE_KEY_MAP[key] = val;
 });
-
+
+
 function _bindEvent(el, type, fn) {
 	if (el.addEventListener){
 		el.addEventListener(type, fn, _useCapture);
 	} else if (el.attachEvent){
 		el.attachEvent('on' + type, fn);
 	}
-}
+}
+
 function _unbindEvent(el, type, fn) {
 	if (el.removeEventListener){
 		el.removeEventListener(type, fn, _useCapture);
@@ -344,7 +350,8 @@ function _unbindEvent(el, type, fn) {
 var _EVENT_PROPS = ('altKey,attrChange,attrName,bubbles,button,cancelable,charCode,clientX,clientY,ctrlKey,currentTarget,' +
 	'data,detail,eventPhase,fromElement,handler,keyCode,metaKey,newValue,offsetX,offsetY,originalTarget,pageX,' +
 	'pageY,prevValue,relatedNode,relatedTarget,screenX,screenY,shiftKey,srcElement,target,toElement,view,wheelDelta,which').split(',');
-
+
+
 function KEvent(el, event) {
 	this.init(el, event);
 }
@@ -901,7 +908,8 @@ function _formatHtml(html, htmlTags, urlType, wellFormatted, indentChar) {
 	html = html.replace(/\n\s*\n/g, '\n');
 	html = html.replace(/<span id="__kindeditor_pre_newline__">\n/g, '\n');
 	return _trim(html);
-}
+}
+
 function _clearMsWord(html, htmlTags) {
 	html = html.replace(/<meta[\s\S]*?>/ig, '')
 		.replace(/<![\s\S]*?>/ig, '')
@@ -914,7 +922,8 @@ function _clearMsWord(html, htmlTags) {
 			return full.replace(/border-bottom:([#\w\s]+)/ig, 'border:$1');
 		});
 	return _formatHtml(html, htmlTags);
-}
+}
+
 function _mediaType(src) {
 	if (/\.(rm|rmvb)(\?|$)/i.test(src)) {
 		return 'audio/x-pn-realaudio-plugin';
@@ -923,7 +932,8 @@ function _mediaType(src) {
 		return 'application/x-shockwave-flash';
 	}
 	return 'video/x-ms-asf-plugin';
-}
+}
+
 function _mediaClass(type) {
 	if (/realaudio/i.test(type)) {
 		return 'ke-rm';
@@ -967,7 +977,10 @@ function _mediaImg(blankPath, attrs) {
 	html += 'data-ke-tag="' + escape(srcTag) + '" alt="" />';
 	return html;
 }
-
+
+
+
+
 function _tmpl(str, data) {
 	var fn = new Function("obj",
 		"var p=[],print=function(){p.push.apply(p,arguments);};" +
@@ -1304,7 +1317,8 @@ function _getScrollPos(doc) {
 	}
 	return {x : x, y : y};
 }
-
+
+
 function KNode(node) {
 	this.init(node);
 }
@@ -1940,7 +1954,8 @@ function _copyAndDelete(range, isCopy, isDelete) {
 		}
 	}
 	return isCopy ? frag : range;
-}
+}
+
 function _moveToElementText(range, el) {
 	var node = el;
 	while (node) {
@@ -1953,7 +1968,8 @@ function _moveToElementText(range, el) {
 	try {
 		range.moveToElementText(el);
 	} catch(e) {}
-}
+}
+
 function _getStartEnd(rng, isStart) {
 	var doc = rng.parentElement().ownerDocument,
 		pointRange = rng.duplicate();
@@ -2018,7 +2034,8 @@ function _getStartEnd(rng, isStart) {
 		}
 	}
 	return {node: startNode, offset: startPos};
-}
+}
+
 function _getEndRange(node, offset) {
 	var doc = node.ownerDocument || node,
 		range = doc.body.createTextRange();
@@ -2075,7 +2092,8 @@ function _getEndRange(node, offset) {
 	range.moveStart('character', offset);
 	K(dummy).remove();
 	return range;
-}
+}
+
 function _toRange(rng) {
 	var doc, range;
 	function tr2td(start) {
@@ -2108,7 +2126,8 @@ function _toRange(rng) {
 	range.setEnd(rng.endContainer, rng.endOffset);
 	return range;
 }
-
+
+
 function KRange(doc) {
 	this.init(doc);
 }
@@ -2526,12 +2545,14 @@ K.START_TO_END = _START_TO_END;
 K.END_TO_END = _END_TO_END;
 K.END_TO_START = _END_TO_START;
 
-
+
+
 function _nativeCommand(doc, key, val) {
 	try {
 		doc.execCommand(key, false, val);
 	} catch(e) {}
-}
+}
+
 function _nativeCommandValue(doc, key) {
 	var val = '';
 	try {
@@ -2541,11 +2562,13 @@ function _nativeCommandValue(doc, key) {
 		val = '';
 	}
 	return val;
-}
+}
+
 function _getSel(doc) {
 	var win = _getWin(doc);
 	return _IERANGE ? doc.selection : win.getSelection();
-}
+}
+
 function _getRng(doc) {
 	var sel = _getSel(doc), rng;
 	try {
@@ -2559,7 +2582,8 @@ function _getRng(doc) {
 		return null;
 	}
 	return rng;
-}
+}
+
 function _singleKeyMap(map) {
 	var newMap = {}, arr, v;
 	_each(map, function(key, val) {
@@ -2570,7 +2594,8 @@ function _singleKeyMap(map) {
 		}
 	});
 	return newMap;
-}
+}
+
 function _hasAttrOrCss(knode, map) {
 	return _hasAttrOrCssByKey(knode, map, '*') || _hasAttrOrCssByKey(knode, map);
 }
@@ -2601,7 +2626,8 @@ function _hasAttrOrCssByKey(knode, map, mapKey) {
 		}
 	}
 	return false;
-}
+}
+
 function _removeAttrOrCss(knode, map) {
 	if (knode.type != 1) {
 		return;
@@ -2639,20 +2665,26 @@ function _removeAttrOrCssByKey(knode, map, mapKey) {
 	if (allFlag) {
 		knode.remove(true);
 	}
-}
+}
+
 function _getInnerNode(knode) {
 	var inner = knode;
 	while (inner.first()) {
 		inner = inner.first();
 	}
 	return inner;
-}
+}
+
 function _isEmptyNode(knode) {
 	if (knode.type != 1 || knode.isSingle()) {
 		return false;
 	}
 	return knode.html().replace(/<[^>]+>/g, '') === '';
-}
+}
+
+
+
+
 function _mergeWrapper(a, b) {
 	a = a.clone(true);
 	var lastA = _getInnerNode(a), childA = a, merged = false;
@@ -2671,7 +2703,8 @@ function _mergeWrapper(a, b) {
 		b = b.first();
 	}
 	return a;
-}
+}
+
 function _wrapNode(knode, wrapper) {
 	wrapper = wrapper.clone(true);
 	if (knode.type == 3) {
@@ -2695,7 +2728,8 @@ function _wrapNode(knode, wrapper) {
 	}
 	nodeWrapper.replaceWith(wrapper);
 	return wrapper;
-}
+}
+
 function _mergeAttrs(knode, attrs, styles) {
 	_each(attrs, function(key, val) {
 		if (key !== 'style') {
@@ -2705,7 +2739,8 @@ function _mergeAttrs(knode, attrs, styles) {
 	_each(styles, function(key, val) {
 		knode.css(key, val);
 	});
-}
+}
+
 function _inPreElement(knode) {
 	while (knode && knode.name != 'body') {
 		if (_PRE_TAG_MAP[knode.name] || knode.name == 'div' && knode.hasClass('ke-script')) {
@@ -2714,7 +2749,8 @@ function _inPreElement(knode) {
 		knode = knode.parent();
 	}
 	return false;
-}
+}
+
 function KCmd(range) {
 	this.init(range);
 }
@@ -3398,7 +3434,8 @@ function _drag(options) {
 		}
 	});
 }
-
+
+
 function KWidget(options) {
 	this.init(options);
 }
@@ -3573,7 +3610,7 @@ function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
 		'table.ke-zeroborder td {border:1px dotted #AAA;}',
 		'img.ke-flash {',
 		'	border:1px solid #AAA;',
-		'	background-image:url(' + themesPath + 'common/flash.gif);',
+		'	background-image:url(' + themesPath + 'entity/flash.gif);',
 		'	background-position:center center;',
 		'	background-repeat:no-repeat;',
 		'	width:100px;',
@@ -3581,7 +3618,7 @@ function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
 		'}',
 		'img.ke-rm {',
 		'	border:1px solid #AAA;',
-		'	background-image:url(' + themesPath + 'common/rm.gif);',
+		'	background-image:url(' + themesPath + 'entity/rm.gif);',
 		'	background-position:center center;',
 		'	background-repeat:no-repeat;',
 		'	width:100px;',
@@ -3589,7 +3626,7 @@ function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
 		'}',
 		'img.ke-media {',
 		'	border:1px solid #AAA;',
-		'	background-image:url(' + themesPath + 'common/media.gif);',
+		'	background-image:url(' + themesPath + 'entity/media.gif);',
 		'	background-position:center center;',
 		'	background-repeat:no-repeat;',
 		'	width:100px;',
@@ -3638,7 +3675,8 @@ function _elementVal(knode, val) {
 	}
 	return knode.html(val);
 }
-
+
+
 function KEdit(options) {
 	this.init(options);
 }
@@ -3899,7 +3937,8 @@ function _selectToolbar(name, fn) {
 		fn(knode);
 	}
 }
-
+
+
 function KToolbar(options) {
 	this.init(options);
 }
@@ -4019,7 +4058,8 @@ function _toolbar(options) {
 K.ToolbarClass = KToolbar;
 K.toolbar = _toolbar;
 
-
+
+
 function KMenu(options) {
 	this.init(options);
 }
@@ -4102,7 +4142,8 @@ function _menu(options) {
 K.MenuClass = KMenu;
 K.menu = _menu;
 
-
+
+
 function KColorPicker(options) {
 	this.init(options);
 }
@@ -4204,9 +4245,9 @@ _extend(KUploadButton, {
 			'<div class="ke-inline-block ' + cls + '">',
 			(options.target ? '' : '<iframe name="' + target + '" style="display:none;"></iframe>'),
 			(options.form ? '<div class="ke-upload-area">' : '<form class="ke-upload-area ke-form" method="post" enctype="multipart/form-data" target="' + target + '" action="' + url + '">'),
-			'<span class="ke-button-common">',
+			'<span class="ke-button-entity">',
 			hiddenElements.join(''),
-			'<input type="button" class="ke-button-common ke-button" value="' + title + '" />',
+			'<input type="button" class="ke-button-entity ke-button" value="' + title + '" />',
 			'</span>',
 			'<input type="file" class="ke-upload-file" name="' + fieldName + '" tabindex="-1" />',
 			(options.form ? '</div>' : '</form>'),
@@ -4219,7 +4260,7 @@ _extend(KUploadButton, {
 		self.iframe = options.target ? K('iframe[name="' + target + '"]') : K('iframe', div);
 		self.form = options.form ? K(options.form) : K('form', div);
 		self.fileBox = K('.ke-upload-file', div);
-		var width = options.width || K('.ke-button-common', div).width();
+		var width = options.width || K('.ke-button-entity', div).width();
 		K('.ke-upload-area', div).width(width);
 		self.options = options;
 	},
@@ -4276,15 +4317,16 @@ K.uploadbutton = _uploadbutton;
 function _createButton(arg) {
 	arg = arg || {};
 	var name = arg.name || '',
-		span = K('<span class="ke-button-common ke-button-outer" title="' + name + '"></span>'),
-		btn = K('<input class="ke-button-common ke-button" type="button" value="' + name + '" />');
+		span = K('<span class="ke-button-entity ke-button-outer" title="' + name + '"></span>'),
+		btn = K('<input class="ke-button-entity ke-button" type="button" value="' + name + '" />');
 	if (arg.click) {
 		btn.click(arg.click);
 	}
 	span.append(btn);
 	return span;
 }
-
+
+
 function KDialog(options) {
 	this.init(options);
 }
@@ -4483,7 +4525,8 @@ function _loadScript(url, fn) {
 		}
 	};
 }
-
+
+
 function _chopQuery(url) {
 	var index = url.indexOf('?');
 	return index > 0 ? url.substr(0, index) : url;
@@ -4579,7 +4622,8 @@ function _lang(mixed, langType) {
 		_language[langType][obj.ns][obj.key] = val;
 	});
 }
-
+
+
 function _getImageFromRange(range, fn) {
 	if (range.collapsed) {
 		return;
@@ -4790,7 +4834,9 @@ function _addBookmarkToStack(stack, bookmark) {
 		stack.push(bookmark);
 	}
 }
-
+
+
+
 function _undoToRedo(fromStack, toStack) {
 	var self = this, edit = self.edit,
 		body = edit.doc.body,
@@ -5549,7 +5595,8 @@ K.appendHtml = function(expr, val) {
 		this.appendHtml(val);
 	});
 };
-
+
+
 if (_IE && _V < 7) {
 	_nativeCommand(document, 'BackgroundImageCache', true);
 }
@@ -5559,7 +5606,8 @@ K.create = _create;
 K.instances = _instances;
 K.plugin = _plugin;
 K.lang = _lang;
-
+
+
 _plugin('core', function(K) {
 	var self = this,
 		shortcutKeys = {
@@ -5998,14 +6046,14 @@ _plugin('core', function(K) {
 			attrs.src = _undef(attrs.src, '');
 			attrs.width = _undef(attrs.width, 0);
 			attrs.height = _undef(attrs.height, 0);
-			return _mediaImg(self.themesPath + 'common/blank.gif', attrs);
+			return _mediaImg(self.themesPath + 'entity/blank.gif', attrs);
 		})
 		.replace(/<a[^>]*name="([^"]+)"[^>]*>(?:<\/a>)?/ig, function(full) {
 			var attrs = _getAttrList(full);
 			if (attrs.href !== undefined) {
 				return full;
 			}
-			return '<img class="ke-anchor" src="' + self.themesPath + 'common/anchor.gif" data-ke-name="' + escape(attrs.name) + '" />';
+			return '<img class="ke-anchor" src="' + self.themesPath + 'entity/anchor.gif" data-ke-name="' + escape(attrs.name) + '" />';
 		})
 		.replace(/<script([^>]*)>([\s\S]*?)<\/script>/ig, function(full, attr, code) {
 			return '<div class="ke-script" data-ke-script-attr="' + escape(attr) + '">' + escape(code) + '</div>';
@@ -6380,8 +6428,8 @@ KindEditor.plugin('baidumap', function(K) {
 			'<div class="ke-header">',
 			'<div class="ke-left">',
 			lang.address + ' <input id="kindeditor_plugin_map_address" name="address" class="ke-input-text" value="" style="width:200px;" /> ',
-			'<span class="ke-button-common ke-button-outer">',
-			'<input type="button" name="searchBtn" class="ke-button-common ke-button" value="' + lang.search + '" />',
+			'<span class="ke-button-entity ke-button-outer">',
+			'<input type="button" name="searchBtn" class="ke-button-entity ke-button" value="' + lang.search + '" />',
 			'</span>',
 			'</div>',
 			'<div class="ke-right">',
@@ -6459,15 +6507,16 @@ KindEditor.plugin('baidumap', function(K) {
 * @site http://www.kindsoft.net/
 * @licence http://www.kindsoft.net/license.php
 *******************************************************************************/
-
+
+
 KindEditor.plugin('map', function(K) {
 	var self = this, name = 'map', lang = self.lang(name + '.');
 	self.clickToolbar(name, function() {
 		var html = ['<div style="padding:10px 20px;">',
 			'<div class="ke-dialog-row">',
 			lang.address + ' <input id="kindeditor_plugin_map_address" name="address" class="ke-input-text" value="" style="width:200px;" /> ',
-			'<span class="ke-button-common ke-button-outer">',
-			'<input type="button" name="searchBtn" class="ke-button-common ke-button" value="' + lang.search + '" />',
+			'<span class="ke-button-entity ke-button-outer">',
+			'<input type="button" name="searchBtn" class="ke-button-entity ke-button" value="' + lang.search + '" />',
 			'</span>',
 			'</div>',
 			'<div class="ke-map" style="width:558px;height:360px;"></div>',
@@ -6619,7 +6668,9 @@ KindEditor.plugin('clearhtml', function(K) {
 * @site http://www.kindsoft.net/
 * @licence http://www.kindsoft.net/license.php
 *******************************************************************************/
-
+
+
+
 KindEditor.plugin('code', function(K) {
 	var self = this, name = 'code';
 	self.clickToolbar(name, function() {
@@ -7006,8 +7057,8 @@ KindEditor.plugin('flash', function(K) {
 				'<label for="keUrl" style="width:60px;">' + lang.url + '</label>',
 				'<input class="ke-input-text" type="text" id="keUrl" name="url" value="" style="width:160px;" /> &nbsp;',
 				'<input type="button" class="ke-upload-button" value="' + lang.upload + '" /> &nbsp;',
-				'<span class="ke-button-common ke-button-outer">',
-				'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
+				'<span class="ke-button-entity ke-button-outer">',
+				'<input type="button" class="ke-button-entity ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 				'</span>',
 				'</div>',
 				'<div class="ke-dialog-row">',
@@ -7046,7 +7097,7 @@ KindEditor.plugin('flash', function(K) {
 							heightBox[0].focus();
 							return;
 						}
-						var html = K.mediaImg(self.themesPath + 'common/blank.gif', {
+						var html = K.mediaImg(self.themesPath + 'entity/blank.gif', {
 								src : url,
 								type : K.mediaType('.swf'),
 								width : width,
@@ -7179,8 +7230,8 @@ KindEditor.plugin('image', function(K) {
 			'<div class="ke-dialog-row">',
 			'<label for="remoteUrl" style="width:60px;">' + lang.remoteUrl + '</label>',
 			'<input type="text" id="remoteUrl" class="ke-input-text" name="url" value="" style="width:200px;" /> &nbsp;',
-			'<span class="ke-button-common ke-button-outer">',
-			'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
+			'<span class="ke-button-entity ke-button-outer">',
+			'<input type="button" class="ke-button-entity ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 			'</span>',
 			'</div>',
 			'<div class="ke-dialog-row">',
@@ -7472,8 +7523,8 @@ KindEditor.plugin('insertfile', function(K) {
 			'<label for="keUrl" style="width:60px;">' + lang.url + '</label>',
 			'<input type="text" id="keUrl" name="url" class="ke-input-text" style="width:160px;" /> &nbsp;',
 			'<input type="button" class="ke-upload-button" value="' + lang.upload + '" /> &nbsp;',
-			'<span class="ke-button-common ke-button-outer">',
-			'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
+			'<span class="ke-button-entity ke-button-outer">',
+			'<input type="button" class="ke-button-entity ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 			'</span>',
 			'</div>',
 			'<div class="ke-dialog-row">',
@@ -7705,8 +7756,8 @@ KindEditor.plugin('media', function(K) {
 				'<label for="keUrl" style="width:60px;">' + lang.url + '</label>',
 				'<input class="ke-input-text" type="text" id="keUrl" name="url" value="" style="width:160px;" /> &nbsp;',
 				'<input type="button" class="ke-upload-button" value="' + lang.upload + '" /> &nbsp;',
-				'<span class="ke-button-common ke-button-outer">',
-				'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
+				'<span class="ke-button-entity ke-button-outer">',
+				'<input type="button" class="ke-button-entity ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 				'</span>',
 				'</div>',
 				'<div class="ke-dialog-row">',
@@ -7750,7 +7801,7 @@ KindEditor.plugin('media', function(K) {
 							heightBox[0].focus();
 							return;
 						}
-						var html = K.mediaImg(self.themesPath + 'common/blank.gif', {
+						var html = K.mediaImg(self.themesPath + 'entity/blank.gif', {
 								src : url,
 								type : K.mediaType(url),
 								width : width,
@@ -7870,8 +7921,8 @@ K.extend(KSWFUpload, {
 			'<input type="button" value="Browse" />',
 			'</div>',
 			'<div class="ke-inline-block ke-swfupload-desc">' + options.uploadDesc + '</div>',
-			'<span class="ke-button-common ke-button-outer ke-swfupload-startupload">',
-			'<input type="button" class="ke-button-common ke-button" value="' + options.startButtonValue + '" />',
+			'<span class="ke-button-entity ke-button-outer ke-swfupload-startupload">',
+			'<input type="button" class="ke-button-entity ke-button" value="' + options.startButtonValue + '" />',
 			'</span>',
 			'</div>',
 			'<div class="ke-swfupload-body"></div>',

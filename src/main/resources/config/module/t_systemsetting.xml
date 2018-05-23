@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="systemSetting">
+	<select id="systemSetting.selectPageList"
+		parameterType="com.enterprise.entity.SystemSetting"
+		resultType="com.enterprise.entity.SystemSetting">
+		select * from t_systemsetting where 1=1 order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+	<select id="systemSetting.selectPageCount"
+		parameterType="com.enterprise.entity.SystemSetting"
+		resultType="java.lang.Integer">
+		select count(*) from (select 1 from t_systemsetting t where
+		1=1 ) a
+	</select>
+	<insert id="systemSetting.insert"
+		parameterType="com.enterprise.entity.SystemSetting"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_systemsetting(
+		id
+		<if test="name!=null and name!=''">
+			,name
+		</if>
+		<if test="www!=null and www!=''">
+			,www
+		</if>
+		<if test="logo!=null and logo!=''">
+			,logo
+		</if>
+		<if test="title!=null and title!=''">
+			,title
+		</if>
+		<if test="description!=null and description!=''">
+			,description
+		</if>
+		<if test="keywords!=null and keywords!=''">
+			,keywords
+		</if>
+		<if test="favicon!=null and favicon!=''">
+			,favicon
+		</if>
+		<if test="address!=null and address!=''">
+			,address
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel
+		</if>
+		<if test="email!=null and email!=''">
+			,email
+		</if>
+		<if test="icp!=null and icp!=''">
+			,icp
+		</if>
+		<if test="isopen!=null and isopen">
+			,isopen
+		</if>
+		<if test="closeMsg!=null and closeMsg!=''">
+			,closeMsg
+		</if>
+		<if test="qq!=null and qq!=''">
+			,qq
+		</if>
+		<if test="qqService!=null and qqService!=''">
+			,qqService
+		</if>
+		<if test="statisticsCode!=null and statisticsCode!=''">
+			,statisticsCode
+		</if>
+		<if test="version!=null and version!=''">
+			,version
+		</if>
+		<if test="imageRootPath!=null and imageRootPath!=''">
+			,imageRootPath
+		</if>
+		<if test="fax!=null and fax!=''">
+			,fax
+		</if>
+		<if test="phone!=null and phone!=''">
+			,phone
+		</if>
+		) values (
+		#{id}
+		<if test="name!=null and name!=''">
+			,#{name}
+		</if>
+		<if test="www!=null and www!=''">
+			,#{www}
+		</if>
+		<if test="logo!=null and logo!=''">
+			,#{logo}
+		</if>
+		<if test="title!=null and title!=''">
+			,#{title}
+		</if>
+		<if test="description!=null and description!=''">
+			,#{description}
+		</if>
+		<if test="keywords!=null and keywords!=''">
+			,#{keywords}
+		</if>
+		<if test="favicon!=null and favicon!=''">
+			,#{favicon}
+		</if>
+		<if test="address!=null and address!=''">
+			,#{address}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,#{tel}
+		</if>
+		<if test="email!=null and email!=''">
+			,#{email}
+		</if>
+		<if test="icp!=null and icp!=''">
+			,#{icp}
+		</if>
+		<if test="isopen!=null and isopen">
+			,#{isopen}
+		</if>
+		<if test="closeMsg!=null and closeMsg!=''">
+			,#{closeMsg}
+		</if>
+		<if test="qq!=null and qq!=''">
+			,#{qq}
+		</if>
+		<if test="qqService!=null and qqService!=''">
+			,#{qqService}
+		</if>
+		<if test="statisticsCode!=null and statisticsCode!=''">
+			,#{statisticsCode}
+		</if>
+		<if test="version!=null and version!=''">
+			,#{version}
+		</if>
+		<if test="imageRootPath!=null and imageRootPath!=''">
+			,#{imageRootPath}
+		</if>
+		<if test="fax!=null and fax!=''">
+			,#{fax}
+		</if>
+		<if test="phone!=null and phone!=''">
+			,#{phone}
+		</if>
+		)
+	</insert>
+	<update id="systemSetting.update"
+		parameterType="com.enterprise.entity.SystemSetting">
+		update t_systemsetting
+		set id=#{id}
+		<if test="name!=null and name!=''">
+			,name=#{name}
+		</if>
+		<if test="www!=null and www!=''">
+			,www=#{www}
+		</if>
+		<if test="logo!=null and logo!=''">
+			,logo=#{logo}
+		</if>
+		<if test="title!=null and title!=''">
+			,title=#{title}
+		</if>
+		<if test="description!=null and description!=''">
+			,description=#{description}
+		</if>
+		<if test="keywords!=null and keywords!=''">
+			,keywords=#{keywords}
+		</if>
+		<if test="favicon!=null and favicon!=''">
+			,favicon=#{favicon}
+		</if>
+		<if test="address!=null and address!=''">
+			,address=#{address}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel=#{tel}
+		</if>
+		<if test="email!=null and email!=''">
+			,email=#{email}
+		</if>
+		<if test="icp!=null and icp!=''">
+			,icp=#{icp}
+		</if>
+		<if test="isopen!=null and isopen">
+			,isopen=#{isopen}
+		</if>
+		<if test="closeMsg!=null and closeMsg!=''">
+			,closeMsg=#{closeMsg}
+		</if>
+		<if test="qq!=null and qq!=''">
+			,qq=#{qq}
+		</if>
+		<if test="qqService!=null and qqService!=''">
+			,qqService=#{qqService}
+		</if>
+		<if test="statisticsCode!=null and statisticsCode!=''">
+			,statisticsCode=#{statisticsCode}
+		</if>
+		<if test="version!=null and version!=''">
+			,version=#{version}
+		</if>
+		<if test="imageRootPath!=null and imageRootPath!=''">
+			,imageRootPath=#{imageRootPath}
+		</if>
+		<if test="fax!=null and fax!=''">
+			,fax=#{fax}
+		</if>
+		<if test="phone!=null and phone!=''">
+			,phone=#{phone}
+		</if>
+		where 1=1 and id=#{id}
+	</update>
+	<select id="systemSetting.selectOne"
+		parameterType="com.enterprise.entity.SystemSetting"
+		resultType="com.enterprise.entity.SystemSetting">
+		select * from t_systemsetting where 1=1 limit 0,1
+	</select>
+	<select id="systemSetting.selectById" parameterType="string" resultType="com.enterprise.entity.SystemSetting">
+	 select * from t_systemsetting t where 1=1 and id=#{id}
+	</select>
+	<select id="systemSetting.selectVersion" parameterType="string" resultType="string">
+	 select version()
+	</select>
+</mapper>

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="java.util.Collection" %>
-	<%@page import="com.enterprise.common.MenuItem" %>
-	<%@page import="com.enterprise.common.Menu" %>
+	<%@page import="com.enterprise.entity.MenuItem" %>
+	<%@page import="com.enterprise.entity.Menu" %>
 <script>
     $(function(){
         $('#side-menu').metisMenu();

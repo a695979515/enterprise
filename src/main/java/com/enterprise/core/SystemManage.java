@@ -2,15 +2,15 @@ package com.enterprise.core;
 
 import com.enterprise.cache.CacheProvider;
 import com.enterprise.cache.SimpleCacheProvider;
-import com.enterprise.service.manage.about.bean.About;
-import com.enterprise.service.manage.articlecategory.bean.ArticleCategory;
-import com.enterprise.service.manage.contact.bean.Contact;
-import com.enterprise.service.manage.friendlinks.bean.FriendLinks;
-import com.enterprise.service.manage.indeximg.bean.IndexImg;
-import com.enterprise.service.manage.messages.bean.Messages;
-import com.enterprise.service.manage.recruitment.bean.Recruitment;
-import com.enterprise.service.manage.service.bean.Service;
-import com.enterprise.service.manage.systemSetting.bean.SystemSetting;
+import com.enterprise.entity.About;
+import com.enterprise.entity.ArticleCategory;
+import com.enterprise.entity.Contact;
+import com.enterprise.entity.FriendLinks;
+import com.enterprise.entity.IndexImg;
+import com.enterprise.entity.Messages;
+import com.enterprise.entity.Recruitment;
+import com.enterprise.entity.Service;
+import com.enterprise.entity.SystemSetting;
 import org.apache.commons.lang.StringUtils;
 
 import javax.annotation.PostConstruct;

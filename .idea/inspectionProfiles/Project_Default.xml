@@ -1,0 +1,8 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="ThymeleafDialectDomInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ThymeleafMessagesResolveInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ThymeleafVariablesResolveInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>

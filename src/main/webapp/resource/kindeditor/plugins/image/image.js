@@ -46,8 +46,8 @@ KindEditor.plugin('image', function(K) {
 			'<div class="ke-dialog-row">',
 			'<label for="remoteUrl" style="width:60px;">' + lang.remoteUrl + '</label>',
 			'<input type="text" id="remoteUrl" class="ke-input-text" name="url" value="" style="width:200px;" /> &nbsp;',
-			'<span class="ke-button-common ke-button-outer">',
-			'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
+			'<span class="ke-button-entity ke-button-outer">',
+			'<input type="button" class="ke-button-entity ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 			'</span>',
 			'</div>',
 			//size

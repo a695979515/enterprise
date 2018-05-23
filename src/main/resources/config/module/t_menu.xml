@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="menu">
+	<select id="menu.selectList" parameterType="hashMap" resultType="com.enterprise.entity.Menu">
+		select * from t_menu where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="pid!=null and pid!=''">
+			and pid=#{pid}
+		</if> 
+		group by id,pid,url,name,orderNum,type ,icon
+		order by orderNum
+	</select>
+	<select id="menu.selectMenus" parameterType="com.enterprise.entity.Menu" resultType="com.enterprise.entity.Menu">
+		select m.* from t_menu m where 1=1 
+		<if test="id!=null and id!=''">
+			and m.id=#{id}
+		</if>
+		<if test="pid!=null and pid!=''">
+			and m.pid=#{pid}
+		</if> 
+		order by m.ordernum
+	</select>
+	<select id="menu.selectOne" parameterType="com.enterprise.entity.Menu" resultType="com.enterprise.entity.Menu">
+		select * from t_menu where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="pid!=null and pid!=''">
+			and pid=#{pid}
+		</if> 
+		
+	</select>
+	<select id="menu.getCount" parameterType="com.enterprise.entity.Menu" resultType="java.lang.Integer">
+		SELECT count(*) FROM t_menu m where 1=1 
+		<if test="id!=null and id!=''">
+			and m.id=#{id}
+		</if>
+		<if test="pid!=null and pid!=''">
+			and m.pid=#{pid}
+		</if>
+	</select>
+	<delete id="menu.delete" parameterType="com.enterprise.entity.Menu">
+		delete from t_menu where id=#{id}
+	</delete>
+	<insert id="menu.insert" parameterType="com.enterprise.entity.Menu" useGeneratedKeys="true" keyProperty="id">
+		insert into t_menu (id,pid,url,name,orderNum,type,icon) values (id,#{pid},#{url},#{name},#{orderNum},#{type},#{icon})
+	</insert>
+	<update id="menu.update" parameterType="com.enterprise.entity.Menu">
+		update t_menu set id=#{id}
+		<if test="pid!=null and pid!=''">
+			,pid=#{pid}
+		</if>
+		<if test="url!=null and url!=''">
+			,url=#{url}
+		</if>
+		<if test="name!=null and name!=''">
+			,name=#{name}
+		</if>
+		<if test="orderNum!=null and orderNum!=''">
+			,orderNum=#{orderNum}
+		</if> 
+		<if test="type!=null and type!=''">
+			,type=#{type}
+		</if>
+		<if test="icon!=null and icon!=''">
+			,icon=#{icon}
+		</if>
+		where id=#{id}
+	</update>
+</mapper>

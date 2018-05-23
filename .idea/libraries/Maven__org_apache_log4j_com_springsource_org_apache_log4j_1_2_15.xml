@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.log4j:com.springsource.org.apache.log4j:1.2.15">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/log4j/com.springsource.org.apache.log4j/1.2.15/com.springsource.org.apache.log4j-1.2.15-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/log4j/com.springsource.org.apache.log4j/1.2.15/com.springsource.org.apache.log4j-1.2.15-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

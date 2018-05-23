@@ -4,6 +4,6 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <plugins>
-        <plugin interceptor="com.enterprise.mybatis.interceptor.LowerCaseSqlInterceptor"></plugin>
+        <plugin interceptor="com.enterprise.interceptor.LowerCaseSqlInterceptor"></plugin>
     </plugins>
 </configuration> 

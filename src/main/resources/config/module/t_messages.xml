@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="message">
+	<select id="message.selectPageList"
+		parameterType="com.enterprise.entity.Messages"
+		resultType="com.enterprise.entity.Messages">
+		select * from t_messages  where 1=1
+		<if test="gender!='' and gender!=null">
+		 	and gender=#{gender}
+		</if>
+		order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+	<select id="message.selectPageCount"
+		parameterType="com.enterprise.entity.Messages"
+		resultType="java.lang.Integer">
+		select count(*) from  t_messages t where 1=1 
+		<if test="gender!='' and gender!=null">
+		 	and gender=#{gender}
+		</if>
+	</select>
+	<insert id="message.insert"
+		parameterType="com.enterprise.entity.Messages"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_messages(
+			id
+		<if test="title!=null and title!=''">
+			,title
+		</if>
+		<if test="gender!=null and gender!=''">
+			,gender
+		</if>
+		<if test="name!=null and name!=''">
+			,name
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel
+		</if>
+		<if test="email!=null and email!=''">
+			,email
+		</if>
+		<if test="content!=null and content!=''">
+			,content
+		</if>
+			,leavetime
+
+
+		) values (
+		#{id}
+		<if test="title!=null and title!=''">
+			,#{title}
+		</if>
+		<if test="gender!=null and gender!=''">
+			,#{gender}
+		</if>
+		<if test="name!=null and name!=''">
+			,#{name}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,#{tel}
+		</if>
+		<if test="email!=null and email!=''">
+			,#{email}
+		</if>
+		<if test="content!=null and content!=''">
+			,#{content}
+		</if>
+			,now()
+		)
+	</insert>
+	<update id="message.update"
+		parameterType="com.enterprise.entity.Messages">
+		update t_messages
+		set id=#{id}
+		<if test="title!=null and title!=''">
+			,title=#{title}
+		</if>
+		<if test="gender!=null and gender!=''">
+			,gender=#{gender}
+		</if>
+		<if test="name!=null and name!=''">
+			,name=#{name}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel=#{tel}
+		</if>
+		<if test="email!=null and email!=''">
+			,email=#{email}
+		</if>
+		<if test="content!=null and content!=''">
+			,content=#{content}
+		</if>
+			where 1=1 and id=#{id}
+	</update>
+	<select id="message.selectOne"
+		parameterType="com.enterprise.entity.Messages"
+		resultType="com.enterprise.entity.Messages">
+		select * from t_messages where 1=1 and id=#{id}
+	</select>
+	<select id="message.selectById" parameterType="int" resultType="com.enterprise.entity.Messages">
+	 select * from t_messages  where 1=1 and id=#{id}
+	</select>
+</mapper>

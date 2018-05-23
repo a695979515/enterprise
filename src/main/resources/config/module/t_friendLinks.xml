@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="friendLinks">
+	<select id="friendLinks.selectPageList" parameterType="com.enterprise.entity.FriendLinks" resultType="com.enterprise.entity.FriendLinks">
+		select * from t_friendLinks where 1=1
+		order by id desc
+		limit #{offset},#{pageSize} 
+	</select>
+	<select id="friendLinks.selectPageCount" parameterType="com.enterprise.entity.FriendLinks" resultType="java.lang.Integer">
+		select count(*) from t_friendLinks where 1=1
+	</select>
+	<insert id="friendLinks.insert" parameterType="com.enterprise.entity.FriendLinks" useGeneratedKeys="true" keyProperty="id">
+		insert into t_friendLinks(
+			id
+			<if test="name!=null and name!=''">
+			,name
+			</if>
+			<if test="target!=null and target!=''">
+			,target
+			</if>
+			<if test="url!=null and url!=''">
+			,url
+			</if>
+		) values (
+			#{id}
+			<if test="name!=null and name!=''">
+			,#{name}
+			</if>
+			<if test="target!=null and target!=''">
+			,#{target}
+			</if>
+			<if test="url!=null and url!=''">
+			,#{url}
+			</if>
+		)
+	</insert>
+	<update id="friendLinks.update" parameterType="com.enterprise.entity.FriendLinks">
+		update t_friendLinks set 
+		id = #{id}
+		<if test="name!=null and name!=''">
+			,name=#{name}
+		</if>
+		<if test="target!=null and target!=''">
+			,target=#{target}
+		</if>
+		<if test="url!=null and url!=''">
+			,url=#{url}
+		</if>
+		where  id = #{id}
+	</update>
+	<select id="friendLinks.selectOne" parameterType="com.enterprise.entity.FriendLinks" resultType="com.enterprise.entity.FriendLinks">
+		select * from t_friendLinks where 1=1
+		<if test="id!=0">
+			and id=#{id}
+		</if>
+		<if test="name!=null and name!=''">
+			and name=#{name}
+		</if>
+		<if test="target!=null and target!=''">
+			and target=#{target}
+		</if>
+		<if test="url!=null and url!=''">
+			and url=#{url}
+		</if>
+	</select>
+	<select id="friendLinks.selectList" parameterType="com.enterprise.entity.FriendLinks" resultType="com.enterprise.entity.FriendLinks">
+		select * from t_friendLinks  where 1=1
+		order by id
+	</select>
+	<select id="friendLinks.selectById" parameterType="int" resultType="com.enterprise.entity.FriendLinks">
+		select * from t_friendLinks where 1=1 and id=#{id}
+	</select>
+	<delete id="friendLinks.delete" parameterType="com.enterprise.entity.FriendLinks">
+		delete from t_friendLinks where id = #{id}
+	</delete>
+	<delete id="friendLinks.deleteById" parameterType="int">
+		delete from t_friendLinks where id = #{id}
+	</delete>
+</mapper>

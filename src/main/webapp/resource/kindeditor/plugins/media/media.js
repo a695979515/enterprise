@@ -24,8 +24,8 @@ KindEditor.plugin('media', function(K) {
 				'<label for="keUrl" style="width:60px;">' + lang.url + '</label>',
 				'<input class="ke-input-text" type="text" id="keUrl" name="url" value="" style="width:160px;" /> &nbsp;',
 				'<input type="button" class="ke-upload-button" value="' + lang.upload + '" /> &nbsp;',
-				'<span class="ke-button-common ke-button-outer">',
-				'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
+				'<span class="ke-button-entity ke-button-outer">',
+				'<input type="button" class="ke-button-entity ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 				'</span>',
 				'</div>',
 				//width
@@ -72,7 +72,7 @@ KindEditor.plugin('media', function(K) {
 							heightBox[0].focus();
 							return;
 						}
-						var html = K.mediaImg(self.themesPath + 'common/blank.gif', {
+						var html = K.mediaImg(self.themesPath + 'entity/blank.gif', {
 								src : url,
 								type : K.mediaType(url),
 								width : width,

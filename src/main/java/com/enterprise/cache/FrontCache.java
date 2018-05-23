@@ -1,27 +1,11 @@
 package com.enterprise.cache;
 
-import com.enterprise.page.PageModel;
-import com.enterprise.service.manage.about.AboutService;
-import com.enterprise.service.manage.about.bean.About;
-import com.enterprise.service.manage.articlecategory.ArticleCategoryService;
-import com.enterprise.service.manage.articlecategory.bean.ArticleCategory;
-import com.enterprise.service.manage.contact.ContactService;
-import com.enterprise.service.manage.contact.bean.Contact;
-import com.enterprise.service.manage.friendlinks.FriendLinksService;
-import com.enterprise.service.manage.friendlinks.bean.FriendLinks;
-import com.enterprise.service.manage.indeximg.IndexImgService;
-import com.enterprise.service.manage.indeximg.bean.IndexImg;
-import com.enterprise.service.manage.messages.MessageService;
-import com.enterprise.service.manage.messages.bean.Messages;
-import com.enterprise.service.manage.recruitment.RecruitmentService;
-import com.enterprise.service.manage.service.ServiceService;
-import com.enterprise.service.manage.service.bean.Service;
+import com.enterprise.entity.*;
+import com.enterprise.entity.page.PageModel;
+import com.enterprise.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.enterprise.service.manage.recruitment.bean.Recruitment;
 
 import com.enterprise.core.SystemManage;
-import com.enterprise.service.manage.systemSetting.SystemSettingService;
-import com.enterprise.service.manage.systemSetting.bean.SystemSetting;
 import org.springframework.web.context.ServletContextAware;
 
 import javax.servlet.ServletContext;
