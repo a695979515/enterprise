@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 文章管理Action
+ * 文章Action
  * Created by Cesiumai on 2016/6/14.
  */
 @Controller("frontArticleController")

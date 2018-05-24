@@ -17,6 +17,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.springframework.util.ReflectionUtils;
 
 /**
+ * 拦截器
  * 为兼容一些数据库不支持区分大小写的sql语句     故把sql语句都换为小写
  */
 @Intercepts({@Signature(type=Executor.class,method="query",args={MappedStatement.class,Object.class,RowBounds.class,ResultHandler.class})

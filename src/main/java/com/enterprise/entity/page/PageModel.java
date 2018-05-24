@@ -14,8 +14,8 @@ public class PageModel implements CleanBean{
 	private int offset;			//页数
 	private int pagerSize;		// 总页数
 	protected String pagerUrl;	//分页utl
-	private int recordsTotal;
-	private int recordsFiltered;
+	private int recordsTotal;	//记录总数
+	private int recordsFiltered;	//记录过滤
 
 	
 

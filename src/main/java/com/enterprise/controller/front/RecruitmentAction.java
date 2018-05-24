@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 /**
+ * 招聘
  * Created by Cesiumai on 2016/6/17.
  */
 @Controller("recruitmentActionController")

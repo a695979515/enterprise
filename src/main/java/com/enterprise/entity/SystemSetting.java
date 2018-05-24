@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import com.enterprise.entity.page.PageModel;
 
+/**
+ * 系统设置 实体类
+ */
 public class SystemSetting extends PageModel implements Serializable {
 
     private int id;

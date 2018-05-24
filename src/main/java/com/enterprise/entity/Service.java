@@ -5,6 +5,7 @@ import com.enterprise.entity.page.PageModel;
 import java.io.Serializable;
 
 /**
+ * 服务领域实体类
  * Created by Cesiumai on 2016/7/15.
  */
 public class Service extends PageModel implements Serializable{

@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+/**
+ * 验证码
+ */
 public class VerificationCodeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private int imageWidth = 100;

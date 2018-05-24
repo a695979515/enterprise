@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * 备份Action
+ * 数据库备份Action
  * Created by Cesiumai on 2016/6/7.
  */
 @Controller
