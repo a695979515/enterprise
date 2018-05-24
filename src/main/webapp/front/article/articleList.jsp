@@ -1,4 +1,4 @@
-<%@ page import="com.enterprise.service.manage.articlecategory.bean.ArticleCategory" %>
+<%@ page import="com.enterprise.entity.ArticleCategory" %>
 
 <%--
   Created by IntelliJ IDEA.

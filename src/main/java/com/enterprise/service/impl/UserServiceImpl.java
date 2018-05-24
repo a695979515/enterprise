@@ -3,6 +3,7 @@ package com.enterprise.service.impl;
 import java.util.List;
 
 
+import com.enterprise.service.UserService;
 import org.springframework.stereotype.Service;
 
 import com.enterprise.entity.User;
@@ -19,7 +20,7 @@ import javax.annotation.Resource;
  * 
  */
 @Service("userService")
-public class UserServiceImpl implements com.enterprise.service.UserService {
+public class UserServiceImpl implements UserService {
     @Resource
 	private BaseDao dao;
 

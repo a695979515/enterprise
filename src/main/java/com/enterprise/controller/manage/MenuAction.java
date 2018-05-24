@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.enterprise.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,7 +18,7 @@ import com.enterprise.entity.Menu;
 import com.enterprise.entity.MenuItem;
 import com.enterprise.entity.MenuType;
 import com.enterprise.service.Services;
-import com.enterprise.service.impl.MenuService;
+import com.enterprise.service.impl.MenuServiceImpl;
 import com.enterprise.util.RequestHolder;
 import com.enterprise.controller.BaseController;
 

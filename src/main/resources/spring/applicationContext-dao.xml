@@ -56,7 +56,7 @@
 		</tx:attributes>
 	</tx:advice>
 	<aop:config proxy-target-class="true">
-		<aop:pointcut id="interceptorPointCuts" expression="execution(public * com.enterprise.service.impl.*.*(..))"/>
+		<aop:pointcut id="interceptorPointCuts" expression="execution(public * com.enterprise.dao.*.*(..))"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts"/>
 	</aop:config>
 </beans>

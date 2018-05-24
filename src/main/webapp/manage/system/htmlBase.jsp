@@ -4,7 +4,7 @@
 <%@page import="org.springframework.web.context.WebApplicationContext" %>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <%@page import="com.enterprise.service.impl.UserServiceImpl" %>
-<%@page import="com.enterprise.service.impl.MenuService" %>
+<%@page import="com.enterprise.service.impl.MenuServiceImpl" %>
 <%@page import="java.util.Map" %>
 <%@page import="java.util.HashMap" %>
 <%@page import="java.util.LinkedHashMap" %>
@@ -44,7 +44,7 @@
             e.setPassword(password);
             WebApplicationContext app = WebApplicationContextUtils.getWebApplicationContext(request.getSession().getServletContext());
             UserServiceImpl userServiceImpl = app.getBean(UserServiceImpl.class);
-            MenuService menuService = app.getBean(MenuService.class);
+            MenuServiceImpl menuService = app.getBean(MenuServiceImpl.class);
             u = userServiceImpl.login(e);
             session.setAttribute("manage_session_user_info", u);
             Map<String, String> param = new HashMap<String, String>();

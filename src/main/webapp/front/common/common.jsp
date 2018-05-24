@@ -9,7 +9,7 @@
          pageEncoding="UTF-8" %>
 <%@ page isELIgnored="false" %>
 <%@page import="com.enterprise.core.SystemManage" %>
-<%@page import="com.enterprise.service.manage.systemSetting.bean.SystemSetting" %>
+<%@page import="com.enterprise.entity.SystemSetting" %>
 <%@ page import="org.apache.commons.lang.StringUtils" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 

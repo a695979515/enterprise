@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.enterprise.service.MenuService;
 import org.springframework.stereotype.Service;
 
 import com.enterprise.entity.Menu;
@@ -19,8 +20,8 @@ import com.enterprise.service.Services;
 import com.enterprise.dao.BaseDao;
 import com.enterprise.entity.page.PageModel;
 
-@Service
-public class MenuService implements Services<Menu>{
+@Service("menuService")
+public class MenuServiceImpl implements MenuService {
 	@Resource
 	private BaseDao dao;
 	
@@ -141,7 +142,7 @@ public class MenuService implements Services<Menu>{
 	 * @param list	被检查的菜单列表
 	 * @return  全部存在返回true   
 	 */
-	private boolean checkAllContains(String[] idArr,List<Menu> list){
+	public boolean checkAllContains(String[] idArr,List<Menu> list){
 		int n = list.size();
 		for(int i = 0; i<list.size();i++){
 			for(int j = 0; j<idArr.length;j++){
@@ -198,7 +199,7 @@ public class MenuService implements Services<Menu>{
 
 		return root;
 	}
-	private void loadChildrenByPid(MenuItem item, Menu menu,String url,User u){
+	public void loadChildrenByPid(MenuItem item, Menu menu,String url,User u){
 		Map<String ,String> param = new HashMap<String, String>();
 
 		param.put("pid", menu.getPid());

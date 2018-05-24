@@ -1,4 +1,4 @@
-<%@ page import="com.enterprise.service.manage.service.bean.Service" %><%--
+<%@ page import="com.enterprise.entity.Service" %><%--
   Created by IntelliJ IDEA.
   User: Cesiumai
   Date: 2016/6/17
