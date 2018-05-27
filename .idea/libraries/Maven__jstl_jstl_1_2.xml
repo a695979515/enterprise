@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: jstl:jstl:1.2">
     <CLASSES>
-      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/jstl/jstl/1.2/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/jstl/jstl/1.2/jstl-1.2.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/jstl/jstl/1.2/jstl-1.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/jstl/jstl/1.2/jstl-1.2-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/jstl/jstl/1.2/jstl-1.2-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/jstl/jstl/1.2/jstl-1.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
