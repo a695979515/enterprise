@@ -137,7 +137,7 @@
      * 更换验证码
      */
     function reloadImg() {
-        document.getElementById("codes").src = "<%=path%>/getVerificationCode.do?" + "radom="
+        document.getElementById("codes").src = "<%=path%>/getVerificationCode?" + "radom="
                 + Math.random();
         $("#vcode").focus();
     }

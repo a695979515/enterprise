@@ -26,14 +26,6 @@
     	<servlet-name>springMvc</servlet-name>
     	<url-pattern>/</url-pattern>
     </servlet-mapping>
-    <servlet>
-		<servlet-name>VerificationCode</servlet-name>
-		<servlet-class>com.enterprise.core.servlet.VerificationCodeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>VerificationCode</servlet-name>
-		<url-pattern>/getVerificationCode.do</url-pattern>
-	</servlet-mapping>
     <filter>
         <filter-name>Set Character Encoding</filter-name>
         <filter-class>

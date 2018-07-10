@@ -122,7 +122,7 @@
                                                placeholder="密码"/></li>
             <li class="captchaPic">
                 <div class="inpLi" style="overflow: hidden;width: 236px;float: left;"><b>验证码：</b><input name="manage_vcode" type="text" class="captcha"></div>
-                <img id="manage_vcode" style="float: right;" src="<%=path%>/getVerificationCode.do" id="codes2"
+                <img id="manage_vcode" style="float: right;" src="<%=path%>/getVerificationCode" id="codes2"
                      onclick="javaScript:reloadImg2();" title="看不清？点击更换另一个验证码。">
             </li>
             <li class="sub"><input type="checkbox" class="ace" name="remember" value="true">下次自动登录 <input type="submit" name="submit" class="btn" value="登录"></li>

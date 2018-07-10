@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: mysql:mysql-connector-java:5.0.8">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/mysql/mysql-connector-java/5.0.8/mysql-connector-java-5.0.8.jar!/" />
+      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/mysql/mysql-connector-java/5.0.8/mysql-connector-java-5.0.8.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/mysql/mysql-connector-java/5.0.8/mysql-connector-java-5.0.8-javadoc.jar!/" />
+      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/mysql/mysql-connector-java/5.0.8/mysql-connector-java-5.0.8-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/mysql/mysql-connector-java/5.0.8/mysql-connector-java-5.0.8-sources.jar!/" />
+      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/mysql/mysql-connector-java/5.0.8/mysql-connector-java-5.0.8-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

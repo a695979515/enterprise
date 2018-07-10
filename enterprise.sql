@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50536
+Source Server Version : 50722
 Source Host           : localhost:3306
 Source Database       : enterprise
 
 Target Server Type    : MYSQL
-Target Server Version : 50536
+Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2016-12-09 17:58:23
+Date: 2018-07-10 17:13:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `t_about` (
 -- ----------------------------
 -- Records of t_about
 -- ----------------------------
-INSERT INTO `t_about` VALUES ('6', '    沪景装饰工程有限公司是一个年轻、活力、富有极强的创造力及社会责任感的年轻团队，置身于先进的空间设计领域，服务于各种空间的客户需求。不同流派、不同风格的设计理念在对艺术和卓越的追求中融会贯通，使更多、更新的设计理念和设计手法在这里激情释放和升华。同时，让我们尊贵的客户能够享受到最前沿的设计。沪景装饰公司更以强大的施工作业团队为您提供全方位的空间解决方案。\r\n');
+INSERT INTO `t_about` VALUES ('6', 'XX装饰工程有限公司是一个年轻、活力、富有极强的创造力及社会责任感的年轻团队，置身于先进的空间设计领域，服务于各种空间的客户需求。不同流派、不同风格的设计理念在对艺术和卓越的追求中融会贯通，使更多、更新的设计理念和设计手法在这里激情释放和升华。同时，让我们尊贵的客户能够享受到最前沿的设计。沪景装饰公司更以强大的施工作业团队为您提供全方位的空间解决方案。');
 
 -- ----------------------------
 -- Table structure for t_article
@@ -96,7 +96,7 @@ CREATE TABLE `t_contact` (
 -- ----------------------------
 -- Records of t_contact
 -- ----------------------------
-INSERT INTO `t_contact` VALUES ('5', '<span style=\"white-space:normal;\">公司地址：深圳市福田区XX大厦</span> \r\n<p style=\"white-space:normal;\">\r\n	电话：1355885566\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	联系人：潘先生\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	传真：+86 4554687454\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	邮箱：695979515@qq.com\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	<br />\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	<br />\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	<img src=\"http://api.map.baidu.com/staticimage?center=114.033121%2C22.538548&zoom=19&width=558&height=360&markers=114.033121%2C22.538548&markerStyles=l%2CA\" alt=\"\" /> \r\n</p>');
+INSERT INTO `t_contact` VALUES ('5', '<span style=\"white-space:normal;\">公司地址：深圳市南山区XX大厦</span> \r\n<p style=\"white-space:normal;\">\r\n	电话：1355555555\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	联系人：X先生\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	传真：+86 455455554\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	邮箱：695979515@qq.com\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	<br />\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	<br />\r\n</p>\r\n<p style=\"white-space:normal;\">\r\n	<iframe src=\"http://localhost:8080/resource/kindeditor/plugins/baidumap/index.html?center=113.94547%2C22.530027&zoom=18&width=558&height=360&markers=113.94547%2C22.530027&markerStyles=l%2CA\" frameborder=\"0\" style=\"width:560px;height:362px;\">\r\n	</iframe>\r\n</p>');
 
 -- ----------------------------
 -- Table structure for t_friendlinks
@@ -278,7 +278,7 @@ CREATE TABLE `t_systemlog` (
   `loginArea` varchar(45) DEFAULT NULL,
   `diffAreaLogin` char(1) DEFAULT 'n',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=436 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=439 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_systemlog
@@ -707,6 +707,9 @@ INSERT INTO `t_systemlog` VALUES ('432', 'login', 'login', '1', 'admin', '0:0:0:
 INSERT INTO `t_systemlog` VALUES ('433', 'login', 'login', '1', 'admin', '0:0:0:0:0:0:0:1', '2016-07-26 10:00:40', '0', 'n');
 INSERT INTO `t_systemlog` VALUES ('434', 'login', 'login', '1', 'admin', '0:0:0:0:0:0:0:1', '2016-07-26 10:18:34', '0', 'n');
 INSERT INTO `t_systemlog` VALUES ('435', 'login', 'login', '1', 'admin', '0:0:0:0:0:0:0:1', '2016-11-11 17:52:32', '0', 'n');
+INSERT INTO `t_systemlog` VALUES ('436', 'login', 'login', '1', 'admin', '127.0.0.1', '2018-05-24 12:37:26', null, 'n');
+INSERT INTO `t_systemlog` VALUES ('437', 'login', 'login', '1', 'admin', '127.0.0.1', '2018-05-24 14:54:43', null, 'n');
+INSERT INTO `t_systemlog` VALUES ('438', 'login', 'login', '1', 'admin', '0:0:0:0:0:0:0:1', '2018-07-10 17:06:14', null, 'y');
 
 -- ----------------------------
 -- Table structure for t_systemsetting
@@ -741,7 +744,7 @@ CREATE TABLE `t_systemsetting` (
 -- ----------------------------
 -- Records of t_systemsetting
 -- ----------------------------
-INSERT INTO `t_systemsetting` VALUES ('1', '测试', '华宇装饰设计有限公司', 'http://localhost:8080', '/attached/image/20160616/20160616093517_955.jpg', '华宇装饰设计有限公司', '测试网站', '测试网站', 'http://192.168.1.97:8080/maven_web/resource/images/favicon.png', '深圳市福田区XXX路XX大厦', '077512345687', '69597515@qq.com', '粤ICP备15052307号', 'true', '为了能让您访问更快更稳定，同时为您提高更高品质的服务，我们正在维护系统，因此目前网站不能访问，请稍后回来。给您造成的不便，敬请谅解。', null, 'http://192.168.1.97:8080/', '1.0.0', '<div>\r\n	<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=543089122&site=qq&menu=yes\"><img src=\"http://wpa.qq.com/pa?p=2:543089122:51\" alt=\"QQ店小二,点击这里给我发消息\" title=\"QQ店小二,点击这里给我发消息\" border=\"0\" /></a> <a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=543089122&site=qq&menu=yes\"><img src=\"http://wpa.qq.com/pa?p=2:543089122:51\" alt=\"QQ店小三,点击这里给我发消息\" title=\"QQ店小三,点击这里给我发消息\" border=\"0\" /></a> <a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=543089122&site=qq&menu=yes\"><img src=\"http://wpa.qq.com/pa?p=2:543089122:51\" alt=\"QQ店小四,点击这里给我发消息\" title=\"QQ店小四,点击这里给我发消息\" border=\"0\" /></a> \r\n</div>', 'xx', '077513245689', '13557854833');
+INSERT INTO `t_systemsetting` VALUES ('1', '测试', '某某装饰设计有限公司', 'http://localhost:8080', '/attached/image/20160616/20160616093517_955.jpg', '某某装饰设计有限公司', '测试网站', '测试网站', 'http://localhost:8080/resource/images/favicon.png', '深圳市南山区XXX路XX大厦', '077512345687', '69597515@qq.com', '粤ICP备123456789号', 'true', '为了能让您访问更快更稳定，同时为您提高更高品质的服务，我们正在维护系统，因此目前网站不能访问，请稍后回来。给您造成的不便，敬请谅解。', null, 'http://localhost:8080', '1.0.0', '<div>\r\n	<a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=543089122&site=qq&menu=yes\"><img src=\"http://wpa.qq.com/pa?p=2:543089122:51\" alt=\"QQ店小二,点击这里给我发消息\" title=\"QQ店小二,点击这里给我发消息\" border=\"0\" /></a> <a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=543089122&site=qq&menu=yes\"><img src=\"http://wpa.qq.com/pa?p=2:543089122:51\" alt=\"QQ店小三,点击这里给我发消息\" title=\"QQ店小三,点击这里给我发消息\" border=\"0\" /></a> <a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=543089122&site=qq&menu=yes\"><img src=\"http://wpa.qq.com/pa?p=2:543089122:51\" alt=\"QQ店小四,点击这里给我发消息\" title=\"QQ店小四,点击这里给我发消息\" border=\"0\" /></a> \r\n</div>', 'xx', '077513245689', '13555555555');
 
 -- ----------------------------
 -- Table structure for t_user
