@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: commons-io:commons-io:2.2">
     <CLASSES>
-      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/commons-io/commons-io/2.2/commons-io-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/commons-io/commons-io/2.2/commons-io-2.2.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/commons-io/commons-io/2.2/commons-io-2.2-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/commons-io/commons-io/2.2/commons-io-2.2-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://C:/Work/Projects/MyRainbow/mvn_repositorydeploy/commons-io/commons-io/2.2/commons-io-2.2-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../apache-maven-3.5.3/repository/commons-io/commons-io/2.2/commons-io-2.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
