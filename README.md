@@ -23,11 +23,11 @@
 
 * 后端地址：http://localhost:8080/manage/user/login
 
-![前端](http://p14xu1c2s.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-10%2021.34.35.png)
+![前端](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E5%89%8D%E7%AB%AF.png)
 
-![后端首页](http://p14xu1c2s.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-10%2021.35.45.png)
+![后端首页](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E4%B8%BB%E9%A1%B5.png)
 
-![滚动图管理](http://p14xu1c2s.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-10%2021.35.56.png)
+![滚动图管理](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E6%BB%9A%E5%8A%A8%E5%9B%BE%E7%89%87%E7%AE%A1%E7%90%86.png)
 
-![数据备份](http://p14xu1c2s.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-10%2021.38.49.png)
+![数据备份](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD.png)
 
