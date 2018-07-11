@@ -133,5 +133,12 @@
 
     </form>
 </div>
+<script>
+   function  reloadImg2() {
+       document.getElementById("manage_vcode").src = "<%=path%>/getVerificationCode?" + "radom="
+           + Math.random();
+   }
+
+</script>
 </body>
 </html>
