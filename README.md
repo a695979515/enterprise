@@ -25,11 +25,11 @@
 
 ## 图片示例
 
-![前端](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E5%89%8D%E7%AB%AF.png)
+![前端](https://raw.githubusercontent.com/a695979515/enterprise/master/src/main/webapp/attached/image/%E5%89%8D%E7%AB%AF.png)
 
-![后端首页](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E4%B8%BB%E9%A1%B5.png)
+![后端首页](https://raw.githubusercontent.com/a695979515/enterprise/master/src/main/webapp/attached/image/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E4%B8%BB%E9%A1%B5.png)
 
-![滚动图管理](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E6%BB%9A%E5%8A%A8%E5%9B%BE%E7%89%87%E7%AE%A1%E7%90%86.png)
+![滚动图管理](https://raw.githubusercontent.com/a695979515/enterprise/master/src/main/webapp/attached/image/%E6%BB%9A%E5%8A%A8%E5%9B%BE%E7%89%87%E7%AE%A1%E7%90%86.png)
 
-![数据备份](https://panfuhao.oss-cn-shenzhen.aliyuncs.com/%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD.png)
+![数据备份](https://raw.githubusercontent.com/a695979515/enterprise/master/src/main/webapp/attached/image/%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD.png)
 
