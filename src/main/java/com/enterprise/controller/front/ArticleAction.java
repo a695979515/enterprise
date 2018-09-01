@@ -82,9 +82,9 @@ public class ArticleAction extends BaseController<Article>{
     @RequestMapping("article/{code}")
     public String selectOne(HttpServletRequest request,@ModelAttribute("code")@PathVariable("code") String code,@ModelAttribute("e") Article article, ModelMap model) throws Exception {
         if(isInteger(code)) {   //如果是数字   则为id   按id进行文章查询
-            Article e = new Article();
-            e.setId(Integer.parseInt(code));
-            articleService.update(e);       //更新浏览量
+            Article e = articleService.selectById(Integer.parseInt(code));
+            e.setHit(String.valueOf(Integer.parseInt(e.getHit())+1));
+            articleService.update(e);       //更新浏览量     --优化建议：可使用缓存或者redis暂存  然后再刷入数据库
             Article next = articleService.selectNext(Integer.parseInt(code));
             if(next==null){
                 next = new Article();
@@ -93,7 +93,6 @@ public class ArticleAction extends BaseController<Article>{
             if(previous==null){
                 previous = new Article();
             }
-            e = articleService.selectOne(e);
             model.addAttribute("e", e);
             model.addAttribute("next", next);
             model.addAttribute("previous", previous);

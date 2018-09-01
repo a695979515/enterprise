@@ -129,6 +129,12 @@
     <select id="article.selectById" parameterType="int" resultType="com.enterprise.entity.Article">
         select * from t_article where 1=1 and id=#{id}
     </select>
+    <select id="article.selectNext" parameterType="int" resultType="com.enterprise.entity.Article">
+        select * from t_article where id = (select id from t_article where id &lt; #{id} order by id desc limit 1)
+    </select>
+    <select id="article.selectPrevious" parameterType="int" resultType="com.enterprise.entity.Article">
+        select * from t_article where id = (select id from t_article where id &gt; #{id} order by id desc limit 1)
+    </select>
     <delete id="article.delete" parameterType="com.enterprise.entity.Article">
         delete from t_article where id=#{id}
     </delete>
