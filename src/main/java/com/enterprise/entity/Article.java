@@ -20,6 +20,7 @@ public class Article extends PageModel implements Serializable{
     private String description; //描述
     private String status;      //状态
     private String catename;    //分类名
+    private int orders; //排序
 
     @Override
     public void clean() {
@@ -117,19 +118,13 @@ public class Article extends PageModel implements Serializable{
         this.catename = catename;
     }
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "title='" + title + '\'' +
-                ", categoryId='" + categoryId + '\'' +
-                ", content='" + content + '\'' +
-                ", keywords='" + keywords + '\'' +
-                ", createtime='" + createtime + '\'' +
-                ", hit='" + hit + '\'' +
-                ", image='" + image + '\'' +
-                ", description='" + description + '\'' +
-                ", status='" + status + '\'' +
-                ", catename='" + catename + '\'' +
-                '}';
+    public int getOrders() {
+        return orders;
     }
+
+    public void setOrders(int orders) {
+        this.orders = orders;
+    }
+
+
 }

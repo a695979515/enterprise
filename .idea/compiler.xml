@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="enterprise" target="1.7" />
-      <module name="maven_web" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

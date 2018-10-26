@@ -42,6 +42,9 @@
         <if test="hit!=null and hit!=''">
             ,hit
         </if>
+        <if test="orders!=null and orders!=''">
+            ,orders
+        </if>
         <if test="image!=null and image!=''">
             ,image
         </if>
@@ -69,7 +72,9 @@
         <if test="hit!=null and hit!=''">
             ,#{hit}
         </if>
+        <if test="orders!=null and orders!=''">
             ,#{orders}
+        </if>
         <if test="image!=null and image!=''">
             ,#{image}
         </if>
